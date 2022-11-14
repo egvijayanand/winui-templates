@@ -1,0 +1,92 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "WinUIApp1",
+    "classifications": [
+        "Windows",
+        "WinUI"
+    ],
+    "identity": "VijayAnand.WinUITemplates.App",
+    "description": "A project template for WinUI 3 App",
+    "name": "WinUI 3 App",
+    "shortName": "winui3",
+    "sourceName": "WinUIApp1",
+    "tags": {
+        "language": "C#",
+        "type": "project",
+        "vs_parametersToHide": "no-solution-file"
+    },
+    "guids": [
+        "ee07a7a0-8e59-464e-87f4-d1ab46b70257",
+        "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
+        "2DFEBDDB-0E75-4461-9AC9-76483607B99E",
+        "43174702-C7FA-4CB5-B96F-6C3035DAC71E"
+    ],
+    "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "datatype": "choice",
+            "description": "Option to choose the App target framework.",
+            "choices": [
+                {
+                    "choice": "net6.0",
+                    "description": "Target .NET 6",
+                    "displayName": ".NET 6 (LTS)"
+                },
+                {
+                    "choice": "net7.0",
+                    "description": "Target .NET 7",
+                    "displayName": ".NET 7 (STS)"
+                }
+            ],
+            "replaces": "DOTNET_TFM",
+            "defaultValue": "net7.0"
+        },
+        "include-mvvm-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "If true, includes reference to the CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package."
+        },
+        "Unpackaged": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "If true, configures the App as Unpackaged."
+        },
+        "no-solution-file": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to skip creating a solution file."
+        },
+        "AddMvvmToolkitPackage": {
+            "type": "computed",
+            "value": "(include-mvvm-toolkit)"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "App.xaml.cs"
+        },
+        {
+            "path": "MainWindow.xaml.cs"
+        }
+    ],
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "WinUIApp1.sln"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+What's new in ver. 1.0.0:
+-------------------------
+Initial release of WinUI 3 App and Class Library Templates for CLI.
