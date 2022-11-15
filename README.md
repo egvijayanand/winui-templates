@@ -1,6 +1,8 @@
-## CLI Project Templates for developing WinUI 3 based Desktop Apps
+## CLI Project and Item Templates for developing WinUI 3 based Desktop Apps
 
 CLI project template for developing `WinUI 3` App and Class Library and is named as `winui` and `winuilib` respectively.
+
+CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively.
 
 Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor.
 
@@ -41,4 +43,28 @@ dotnet new winui -n MyWinUIApp -imt
 
 ```shell
 dotnet new winuilib -n MyWinUILib -imt
+```
+
+Use the below .NET CLI command to create the items out these template:
+
+All of these item templates take two parameters:
+
+* `-n` | `--name` - Name of the item
+* `-na` | `--namespace` - Namespace for the item being created
+
+*Note: While working with .NET 7 SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need be mentioned as `-p:na`.*
+
+Page:
+```shell
+dotnet new winui-page -n OrderPage -na MyWinUIApp.Pages
+```
+
+UserControl:
+```shell
+dotnet new winui-usercontrol -n CardView -na MyWinUIApp.Views
+```
+
+Window:
+```shell
+dotnet new winui-window -n MainWindow -na MyWinUIApp
 ```
