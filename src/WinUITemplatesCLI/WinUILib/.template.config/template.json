@@ -10,7 +10,7 @@
     "identity": "VijayAnand.WinUITemplates.Library",
     "description": "A project template for WinUI 3 class library",
     "name": "WinUI 3 Class Library",
-    "shortName": "winui3lib",
+    "shortName": "winuilib",
     "sourceName": "WinUILib1",
     "tags": {
         "language": "C#",

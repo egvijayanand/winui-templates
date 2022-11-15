@@ -5,6 +5,7 @@
 
     <!-- WinUI 3 -->
     <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
 
     <!-- Project Options -->
     <Nullable>enable</Nullable>
