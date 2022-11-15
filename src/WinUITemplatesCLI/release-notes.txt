@@ -1,5 +1,9 @@
-What's new in ver. 1.0.1:
+What's new in ver. 1.0.2:
 -------------------------
+Added Item Templates for WinUI 3 Page, UserControl, and Window.
+
+v1.0.1:
+
 For CLI build to succeed, included the EnableMsixTooling property to the library project template. 
 
 v1.0.0:

@@ -7,7 +7,7 @@
 		<Title>WinUI Templates</Title>
 		<Authors>Vijay Anand E G</Authors>
 		<Copyright>Copyright &#169; 2022 Vijay Anand E G</Copyright>
-		<Description>CLI project templates for developing WinUI 3 App.</Description>
+		<Description>CLI project and item templates for developing WinUI 3 Apps.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
@@ -26,7 +26,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	</PropertyGroup>
 	<ItemGroup>
-		<Content Include="WinUIApp\**\*;WinUILib\**\*" Exclude="**\bin\**;**\obj\**"/>
+		<Content Include="WinUIApp\**\*;WinUILib\**\*;WinUIPage\**\*;WinUIUserControl\**\*;WinUIWindow\**\*" Exclude="**\bin\**;**\obj\**"/>
 		<Compile Remove="**\*"/>
 		<None Include="overview.md" Pack="true" PackagePath="\"/>
 		<None Include="release-notes.txt"/>
