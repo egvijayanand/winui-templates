@@ -52,7 +52,7 @@ All of these item templates take two parameters:
 * `-n` | `--name` - Name of the item
 * `-na` | `--namespace` - Namespace for the item being created
 
-*Note: While working with .NET 7 SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need be mentioned as `-p:na`.*
+*Note: While working with .NET 7 SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need to be mentioned as `-p:na`.*
 
 Page:
 ```shell

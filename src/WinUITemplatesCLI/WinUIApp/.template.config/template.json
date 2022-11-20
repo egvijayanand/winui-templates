@@ -10,7 +10,7 @@
     "description": "A project template for WinUI 3 App",
     "name": "WinUI 3 App",
     "shortName": "winui",
-    "sourceName": "WinUIApp1",
+    "sourceName": "WinUIApp.1",
     "tags": {
         "language": "C#",
         "type": "project",
@@ -83,7 +83,7 @@
                 {
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
-                        "WinUIApp1.sln"
+                        "WinUIApp.1.sln"
                     ]
                 }
             ]

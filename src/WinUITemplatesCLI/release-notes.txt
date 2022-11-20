@@ -1,5 +1,9 @@
-What's new in ver. 1.0.2:
+What's new in ver. 1.0.3:
 -------------------------
+Little housekeeping to make it more reliable.
+
+v1.0.2:
+
 Added Item Templates for WinUI 3 Page, UserControl, and Window.
 
 v1.0.1:

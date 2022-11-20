@@ -13,13 +13,13 @@
     "description": "An item template for WinUI 3 UserControl in XAML",
     "name": "WinUI 3 UserControl",
     "shortName": "winui-usercontrol",
-    "sourceName": "WinUIUserControl",
+    "sourceName": "WinUIUserControl.1",
     "primaryOutputs": [
         {
-            "path": "WinUIUserControl.xaml"
+            "path": "WinUIUserControl.1.xaml"
         },
         {
-            "path": "WinUIUserControl.xaml.cs"
+            "path": "WinUIUserControl.1.xaml.cs"
         }
     ],
     "tags": {

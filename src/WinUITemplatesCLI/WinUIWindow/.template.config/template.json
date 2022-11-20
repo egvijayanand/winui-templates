@@ -13,13 +13,13 @@
     "description": "An item template for WinUI 3 Window in XAML",
     "name": "WinUI 3 Window",
     "shortName": "winui-window",
-    "sourceName": "WinUIWindow",
+    "sourceName": "WinUIWindow.1",
     "primaryOutputs": [
         {
-            "path": "WinUIWindow.xaml"
+            "path": "WinUIWindow.1.xaml"
         },
         {
-            "path": "WinUIWindow.xaml.cs"
+            "path": "WinUIWindow.1.xaml.cs"
         }
     ],
     "tags": {
