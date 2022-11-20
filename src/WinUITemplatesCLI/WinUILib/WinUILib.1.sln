@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinUILib1", "WinUILib1.csproj", "{1C560DC6-4D31-42CC-9BFE-520100689835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinUILib.1", "WinUILib.1.csproj", "{1C560DC6-4D31-42CC-9BFE-520100689835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

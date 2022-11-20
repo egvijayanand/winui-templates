@@ -13,13 +13,13 @@
     "description": "An item template for WinUI 3 Page in XAML",
     "name": "WinUI 3 Page",
     "shortName": "winui-page",
-    "sourceName": "WinUIPage",
+    "sourceName": "WinUIPage.1",
     "primaryOutputs": [
         {
-            "path": "WinUIPage.xaml"
+            "path": "WinUIPage.1.xaml"
         },
         {
-            "path": "WinUIPage.xaml.cs"
+            "path": "WinUIPage.1.xaml.cs"
         }
     ],
     "tags": {

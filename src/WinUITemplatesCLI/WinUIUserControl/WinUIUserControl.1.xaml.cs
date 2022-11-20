@@ -2,9 +2,9 @@
 
 namespace MyApp.Namespace
 {
-    public partial class WinUIPage : Page
+    public partial class WinUIUserControl__1 : UserControl
     {
-        public WinUIPage()
+        public WinUIUserControl__1()
         {
             InitializeComponent();
         }

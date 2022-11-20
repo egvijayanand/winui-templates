@@ -11,7 +11,7 @@
     "description": "A project template for WinUI 3 class library",
     "name": "WinUI 3 Class Library",
     "shortName": "winuilib",
-    "sourceName": "WinUILib1",
+    "sourceName": "WinUILib.1",
     "tags": {
         "language": "C#",
         "type": "project",
@@ -74,7 +74,7 @@
                 {
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
-                        "WinUILib1.sln"
+                        "WinUILib.1.sln"
                     ]
                 }
             ]

@@ -14,7 +14,7 @@
     <!-- Project Options -->
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>WinUIApp1</RootNamespace>
+    <RootNamespace>WinUIApp._1</RootNamespace>
 
     <!-- App Options -->
     <Platforms>x86;x64;arm64</Platforms>
