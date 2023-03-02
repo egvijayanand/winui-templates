@@ -37,6 +37,11 @@
                     "choice": "net7.0",
                     "description": "Target .NET 7",
                     "displayName": ".NET 7 (STS)"
+                },
+                {
+                    "choice": "net8.0",
+                    "description": "Target .NET 8",
+                    "displayName": ".NET 8 (Preview)"
                 }
             ],
             "replaces": "DOTNET_TFM",
