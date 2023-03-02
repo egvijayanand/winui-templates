@@ -21,6 +21,8 @@ call Info "Uninstalling the %packageName% template ..."
 
 dotnet new uninstall %packageName%
 
+dotnet new --debug:rebuildcache
+
 if %errorlevel% == 0 (call Success "Process completed.") else (call Error "Failed to uninstall the template package.")
 
 :end
