@@ -3,10 +3,10 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageType>Template</PackageType>
 		<PackageId>VijayAnand.WinUITemplates</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
+		<PackageVersion>2.0.0</PackageVersion>
 		<Title>WinUI Templates</Title>
 		<Authors>Vijay Anand E G</Authors>
-		<Copyright>Copyright &#169; 2022 Vijay Anand E G</Copyright>
+		<Copyright>Copyright &#169; 2022-2023 Vijay Anand E G</Copyright>
 		<Description>CLI project and item templates for developing WinUI 3 Apps.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<IncludeContentInPack>true</IncludeContentInPack>

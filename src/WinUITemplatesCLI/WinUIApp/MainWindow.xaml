@@ -7,15 +7,45 @@
     xmlns:local="using:WinUIApp._1"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <StackPanel
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Orientation="Horizontal">
-        <Button
-            x:Name="btnCount"
-            Click="OnCountClicked">
-            Click me
-        </Button>
-    </StackPanel>
+    <Window.Content>
+        <StackPanel
+            HorizontalAlignment="Center"
+            Spacing="25"
+            VerticalAlignment="Center">
+            <TextBlock
+                FontSize="24"
+                HorizontalAlignment="Center"
+                Style="{StaticResource MyLabel}"
+                Text="Hello, World!" />
+            <TextBlock
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Style="{StaticResource MyLabel}"
+                Text="Welcome to WinUI 3!" />
+            <!--#if (Mvvm)-->
+            <TextBlock
+                FontSize="16"
+                HorizontalAlignment="Center"
+                Style="{StaticResource MyLabel}"
+                Text="{x:Bind ViewModel.CountText, Mode=TwoWay}" />
+            <Button
+                Command="{x:Bind ViewModel.IncrementCommand}"
+                Content="Click Me"
+                HorizontalAlignment="Center"
+                Style="{StaticResource PrimaryAction}" />
+            <!--#else-->
+            <TextBlock
+                x:Name="txtCount"
+                FontSize="16"
+                HorizontalAlignment="Center"
+                Style="{StaticResource MyLabel}"
+                Text="Current count: 0" />
+            <Button
+                Click="OnCountClicked"
+                Content="Click Me"
+                HorizontalAlignment="Center"
+                Style="{StaticResource PrimaryAction}" />
+            <!--#endif-->
+        </StackPanel>
+    </Window.Content>
 </Window>

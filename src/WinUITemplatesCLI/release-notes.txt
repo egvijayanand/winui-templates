@@ -1,5 +1,15 @@
-What's new in ver. 2.0.0:
+What's new in ver. 2.1.0:
 -------------------------
+1. MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced in the App project template:
+
+-mvvm | --use-mvvm and its default value is false.
+
+dotnet new winui -n MyApp -mvvm
+
+2. Microsoft.WindowsAppSDK NuGet package version has been made dynamic to pull the latest stable version in the 1.x series.
+
+v2.0.0:
+
 Templates updated to support .NET 8 Previews.
 
 Supported values for target framework parameter, can be specified with --framework / -f

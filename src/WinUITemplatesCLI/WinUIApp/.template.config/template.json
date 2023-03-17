@@ -6,7 +6,8 @@
         "Windows",
         "WinUI"
     ],
-    "identity": "VijayAnand.WinUITemplates.App",
+    "identity": "VijayAnand.WinUIApp",
+    "groupIdentity": "VijayAnand.WinUITemplates.App",
     "description": "A project template for WinUI 3 App",
     "name": "WinUI 3 App",
     "shortName": "winui",
@@ -47,6 +48,13 @@
             "replaces": "DOTNET_TFM",
             "defaultValue": "net7.0"
         },
+        "use-mvvm": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use MVVM.",
+            "displayName": "Option to use MVVM"
+        },
         "include-mvvm-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -69,6 +77,10 @@
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
         },
+        "Mvvm": {
+            "type": "computed",
+            "value": "(use-mvvm)"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -89,6 +101,12 @@
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
                         "WinUIApp.1.sln"
+                    ]
+                },
+                {
+                    "condition": "(!Mvvm)",
+                    "exclude": [
+                        "**/ViewModels/*"
                     ]
                 }
             ]
