@@ -1,6 +1,12 @@
 ## CLI Project and Item Templates for developing WinUI 3 based Windows Desktop Apps
 
-CLI project template for developing WinUI 3 App and Class Library and is named as `winui` and `winuilib` respectively.
+|Item|Template Name|Type|
+|:---:|:---:|:---:|
+|WinUI 3 App|winui|Project|
+|WinUI 3 Class Library|winuilib|Project|
+|WinUI 3 Page|winui-page|Item|
+|WinUI 3 UserControl|winui-usercontrol|Item|
+|WinUI 3 Window|winui-window|Item|
 
 Both of the project templates takes the target framework as an input parameter, can be specified with `--framework` / `-f`.
 
@@ -10,7 +16,12 @@ And the supported values are:
 * net7.0 (the default value)
 * net8.0
 
-CLI item template for WinUI 3 Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively.
+All of these item templates take two parameters:
+
+* `-n` | `--name` - Name of the item
+* `-na` | `--namespace` - Namespace for the item being created
+
+*Note: While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need to be mentioned as `-p:na`.*
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -60,13 +71,6 @@ dotnet new winuilib -n MyLib -imt
 ```
 
 Use the below .NET CLI command to create the items out these template:
-
-All of these item templates take two parameters:
-
-* `-n` | `--name` - Name of the item
-* `-na` | `--namespace` - Namespace for the item being created
-
-*Note: While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need to be mentioned as `-p:na`.*
 
 Page:
 ```shell

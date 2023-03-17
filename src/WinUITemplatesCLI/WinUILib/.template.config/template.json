@@ -7,7 +7,8 @@
         "Windows",
         "WinUI"
     ],
-    "identity": "VijayAnand.WinUITemplates.Library",
+    "identity": "VijayAnand.WinUILib",
+    "groupIdentity": "VijayAnand.WinUITemplates.Library",
     "description": "A project template for WinUI 3 class library",
     "name": "WinUI 3 Class Library",
     "shortName": "winuilib",

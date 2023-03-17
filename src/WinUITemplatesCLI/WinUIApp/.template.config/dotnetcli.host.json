@@ -6,10 +6,14 @@
     },
     "Unpackaged": {
       "longName": "unpackaged"
+    },
+    "use-mvvm": {
+      "shortName": "mvvm"
     }
   },
   "usageExamples": [
-    "--framework net6.0",
-    "-f net7.0"
+    "-f net6.0",
+    "-f net7.0",
+    "-f net8.0"
   ]
 }
