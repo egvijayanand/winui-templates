@@ -1,5 +1,17 @@
-What's new in ver. 2.1.0:
--------------------------
+What's new in ver. 2.2.0-preview.1:
+-----------------------------------
+Added a project template for using Blazor Hybrid on WinUI 3 project using the .NET MAUI Native Embedding
+
+Windows-target of .NET MAUI is nothing but WinUI 3 project
+
+dotnet new winui-blazor -n MyApp
+
+For .NET 8 Preview:
+
+dotnet new winui-blazor -n MyApp -f net8.0
+
+v2.1.0:
+
 1. MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced in the App project template:
 
 -mvvm | --use-mvvm and its default value is false.

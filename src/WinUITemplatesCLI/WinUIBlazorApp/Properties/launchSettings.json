@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "WinUIBlazorApp.1": {
+      //#if (Unpackaged)
+      "commandName": "Project",
+      //#else
+      "commandName": "MsixPackage",
+      //#endif
+      "nativeDebugging": false
+    }
+  }
+}
