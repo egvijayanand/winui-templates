@@ -1,5 +1,9 @@
-What's new in ver. 2.2.0-preview.1:
+What's new in ver. 2.2.0-preview.2:
 -----------------------------------
+A maintenance release that addresses solution file issue.
+
+v2.2.0-preview.1:
+
 Added a project template for using Blazor Hybrid on WinUI 3 project using the .NET MAUI Native Embedding
 
 Windows-target of .NET MAUI is nothing but WinUI 3 project

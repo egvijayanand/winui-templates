@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
-        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">DOTNET_TFM-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>DOTNET_TFM-windows10.0.19041.0</TargetFramework>
         <OutputType>WinExe</OutputType>
 
         <!-- .NET MAUI -->
@@ -17,8 +17,8 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinUIBlazorApp._1</RootNamespace>
-
         <!--#if (Unpackaged)-->
+
         <WindowsPackageType>None</WindowsPackageType>
         <!--#endif-->
 
@@ -74,22 +74,4 @@
         <!--#endif-->
         <Manifest Include="$(ApplicationManifest)" />
     </ItemGroup>
-
-    <!-- 
-        Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
-        Tools extension to be activated for this project even if the Windows App SDK Nuget
-        package has not yet been restored.
-    -->
-    <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-        <ProjectCapability Include="Msix"/>
-    </ItemGroup>
-
-    <!-- 
-        Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
-        Explorer "Package and Publish" context menu entry to be enabled for this project even if 
-        the Windows App SDK Nuget package has not yet been restored.
-    -->
-    <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-        <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
-    </PropertyGroup>
 </Project>
