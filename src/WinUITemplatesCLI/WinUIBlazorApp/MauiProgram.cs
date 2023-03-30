@@ -19,12 +19,20 @@ namespace WinUIBlazorApp._1
                    });
 
             builder.Services.AddMauiBlazorWebView();
+#if Net7OrLater
+//-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!
             builder.Services.AddBlazorWebViewDeveloperTools();
-#if Net7OrLater
             builder.Logging.AddDebug();
 #endif
+//+:cnd:noEmit
+#else
+//-:cnd:noEmit
+#if DEBUG
+            builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
+//+:cnd:noEmit
 #endif
             builder.Services.AddSingleton(AppInfo.Current);
             builder.Services.AddSingleton<WeatherForecastService>();
