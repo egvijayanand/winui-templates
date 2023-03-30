@@ -9,6 +9,9 @@
         <SingleProject>true</SingleProject>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
+        <!-- WinUI Options -->
+        <EnableMsixTooling>true</EnableMsixTooling>
+
         <!-- Project Options -->
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
