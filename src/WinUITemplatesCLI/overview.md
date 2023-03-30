@@ -3,6 +3,7 @@
 |Item|Template Name|Type|
 |:---:|:---:|:---:|
 |WinUI 3 App|winui|Project|
+|WinUI 3 Blazor App|winui-blazor|Project|
 |WinUI 3 Class Library|winuilib|Project|
 |WinUI 3 Page|winui-page|Item|
 |WinUI 3 UserControl|winui-usercontrol|Item|
@@ -46,7 +47,16 @@ dotnet new winui -n MyApp
 ```
 
 ```shell
-dotnet new winui -f net8.0 -n MyApp
+dotnet new winui -n MyApp -f net8.0
+```
+
+Blazor App:
+```shell
+dotnet new winui-blazor -n MyApp
+```
+
+```shell
+dotnet new winui-blazor -n MyApp -f net8.0
 ```
 
 Library:
@@ -55,10 +65,10 @@ dotnet new winuilib -n MyLib
 ```
 
 ```shell
-dotnet new winuilib -f net8.0 -n MyLib
+dotnet new winuilib -n MyLib -f net8.0
 ```
 
-Both the project templates take the below optional parameter to include the officially supported CommunityToolkit.Mvvm NuGet package.
+All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/) NuGet package.
 
 * `-imt` | `--include-mvvm-toolkit` - Default value is false
 

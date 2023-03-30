@@ -1,16 +1,26 @@
 ### CLI Project and Item Templates for developing WinUI 3 based Windows Desktop Apps
 
+Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor.
+
+#### Package Status:
+
+|Channel|Version|
+|:---:|:---:|
+|Stable|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI CLI Templates (Stable)")|
+|Preview|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/absoluteLatest "WinUI CLI Templates (Preview)")|
+
 <!-- CLI project template for developing `WinUI 3` App and Class Library and is named as `winui` and `winuilib` respectively. -->
 
 |Item|Template Name|Type|
 |:---:|:---:|:---:|
 |WinUI 3 App|winui|Project|
+|WinUI 3 Blazor App|winui-blazor|Project|
 |WinUI 3 Class Library|winuilib|Project|
 |WinUI 3 Page|winui-page|Item|
 |WinUI 3 UserControl|winui-usercontrol|Item|
 |WinUI 3 Window|winui-window|Item|
 
-Both of the project templates takes the target framework as an input parameter, can be specified with `--framework` / `-f`.
+All three project templates takes the target framework as an input parameter, can be specified with `--framework` / `-f`.
 
 And the supported values are:
 
@@ -18,21 +28,15 @@ And the supported values are:
 * net7.0 (the default value)
 * net8.0
 
-Both the project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
+All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
 
 * `-imt` | `--include-mvvm-toolkit` - Default value is `false`
 
-**App** project takes another optional parameter thus allowing it to be created as MVVM supported solution using the same Microsoft MVVM Toolkit.
+Both the **App** project takes another optional parameter thus allowing it to be created as MVVM supported solution using the same Microsoft MVVM Toolkit.
 
 * `-mvvm` | `--use-mvvm` - Default value is `false`
 
 <!-- CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively. -->
-
-Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor.
-
-#### Package Status:
-
-[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI CLI Templates")
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -57,7 +61,7 @@ dotnet new winui -n MyApp
 ```
 .NET 8 solution:
 ```shell
-dotnet new winui -f net8.0 -n MyApp
+dotnet new winui -n MyApp -f net8.0
 ```
 MVVM based solution:
 ```shell
@@ -68,13 +72,30 @@ Option to include only the MVVM NuGet package:
 dotnet new winui -n MyApp -imt
 ```
 
+Blazor App:
+```shell
+dotnet new winui-blazor -n MyApp
+```
+.NET 8 solution:
+```shell
+dotnet new winui-blazor -n MyApp -f net8.0
+```
+MVVM based solution:
+```shell
+dotnet new winui-blazor -n MyApp -mvvm
+```
+Option to include only the MVVM NuGet package:
+```shell
+dotnet new winui-blazor -n MyApp -imt
+```
+
 Library:
 ```shell
 dotnet new winuilib -n MyLib
 ```
 .NET 8 solution:
 ```shell
-dotnet new winuilib -f net8.0 -n MyLib
+dotnet new winuilib -n MyLib -f net8.0
 ```
 Option to include only the MVVM NuGet package:
 ```shell

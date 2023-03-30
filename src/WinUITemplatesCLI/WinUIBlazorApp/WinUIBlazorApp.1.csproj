@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">DOTNET_TFM-windows10.0.19041.0</TargetFramework>
+        <OutputType>WinExe</OutputType>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+
+        <!-- WinUI Options -->
+        <EnableMsixTooling>true</EnableMsixTooling>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>WinUIBlazorApp._1</RootNamespace>
+
+        <!--#if (Unpackaged)-->
+        <WindowsPackageType>None</WindowsPackageType>
+        <!--#endif-->
+
+        <!-- Display name -->
+        <ApplicationTitle>WinUIBlazorApp.1</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationIdGuid>03cfa94b-a25c-4fa3-917f-101a8efac40f</ApplicationIdGuid>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <!-- Target Platform Options -->
+        <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+
+        <!-- Minimum Target OS Version for Windows Platform -->
+        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+
+        <!-- App Options -->
+        <Platforms>x86;x64;arm64</Platforms>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+        <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128"/>
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*"/>
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*"/>
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="WinUIBlazorApp.1.code-workspace" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!--#if (Net8)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.2.*" />
+        <!--#elif (Net7)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
+        <!--#endif-->
+        <!--#if (AddMvvmToolkitPackage || Mvvm)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+        <!--#endif-->
+        <Manifest Include="$(ApplicationManifest)" />
+    </ItemGroup>
+
+    <!-- 
+        Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+        Tools extension to be activated for this project even if the Windows App SDK Nuget
+        package has not yet been restored.
+    -->
+    <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+        <ProjectCapability Include="Msix"/>
+    </ItemGroup>
+
+    <!-- 
+        Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
+        Explorer "Package and Publish" context menu entry to be enabled for this project even if 
+        the Windows App SDK Nuget package has not yet been restored.
+    -->
+    <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+        <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+    </PropertyGroup>
+</Project>
