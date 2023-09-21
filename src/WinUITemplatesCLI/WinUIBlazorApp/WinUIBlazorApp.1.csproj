@@ -39,6 +39,9 @@
         <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 
         <!-- App Options -->
+        <!--#if (Net8)-->
+        <UseRidGraph>true</UseRidGraph>
+        <!--#endif-->
         <Platforms>x86;x64;arm64</Platforms>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
@@ -65,7 +68,9 @@
 
     <ItemGroup>
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.2.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-rc.1.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
         <!--#endif-->

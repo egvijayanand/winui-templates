@@ -18,6 +18,9 @@
     <RootNamespace>WinUIApp._1</RootNamespace>
 
     <!-- App Options -->
+    <!--#if (Net8)-->
+    <UseRidGraph>true</UseRidGraph>
+    <!--#endif-->
     <Platforms>x86;x64;arm64</Platforms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
@@ -36,7 +39,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.*" />
     <!--#if (AddMvvmToolkitPackage || Mvvm)-->
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
     <!--#endif-->

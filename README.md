@@ -25,8 +25,8 @@ All three project templates takes the target framework as an input parameter, ca
 And the supported values are:
 
 * net6.0
-* net7.0 (the default value)
-* net8.0
+* net7.0
+* net8.0 (the default value)
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
 
@@ -59,9 +59,9 @@ App:
 ```shell
 dotnet new winui -n MyApp
 ```
-.NET 8 solution:
+.NET 7 solution:
 ```shell
-dotnet new winui -n MyApp -f net8.0
+dotnet new winui -n MyApp -f net7.0
 ```
 MVVM based solution:
 ```shell
@@ -76,9 +76,9 @@ Blazor App:
 ```shell
 dotnet new winui-blazor -n MyApp
 ```
-.NET 8 solution:
+.NET 7 solution:
 ```shell
-dotnet new winui-blazor -n MyApp -f net8.0
+dotnet new winui-blazor -n MyApp -f net7.0
 ```
 MVVM based solution:
 ```shell
@@ -93,9 +93,9 @@ Library:
 ```shell
 dotnet new winuilib -n MyLib
 ```
-.NET 8 solution:
+.NET 7 solution:
 ```shell
-dotnet new winuilib -n MyLib -f net8.0
+dotnet new winuilib -n MyLib -f net7.0
 ```
 Option to include only the MVVM NuGet package:
 ```shell
