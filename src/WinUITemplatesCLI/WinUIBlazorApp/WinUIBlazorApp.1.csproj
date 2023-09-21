@@ -69,6 +69,7 @@
     <ItemGroup>
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-rc.1.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#elif (Net7)-->

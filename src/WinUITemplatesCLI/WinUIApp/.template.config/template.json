@@ -73,6 +73,14 @@
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
         },
+        "frameworkLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "Framework",
+                "toLower": true
+            }
+        },
         "Net7": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\")"
