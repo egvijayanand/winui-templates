@@ -1,5 +1,19 @@
-What's new in ver. 2.2.0-preview.2:
+Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
+
+What's new in ver. 2.2.0-preview.3:
 -----------------------------------
+1. Templates updated to .NET 8 RC1 changes
+
+2. The default value for Framework parameter (--framework / -f) is now updated as net8.0
+
+3. Explicit reference to .NET MAUI packages
+
+4. Use of UseRidGraph node to indicate the change in RID behavior
+
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/sdk/8.0/rid-graph
+
+v2.2.0-preview.2:
+
 A maintenance release that addresses solution file issue.
 
 v2.2.0-preview.1:
