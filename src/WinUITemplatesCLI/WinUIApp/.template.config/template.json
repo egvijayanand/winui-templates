@@ -73,6 +73,18 @@
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
         },
+        "Net7": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\")"
+        },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
+        "Net7OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+        },
         "AddMvvmToolkitPackage": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
