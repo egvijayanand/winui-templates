@@ -26,8 +26,16 @@ All of these item templates take two parameters:
 
 To install the template NuGet package, use the below .NET CLI command:
 
+Latest stable version:
+
 ```shell
 dotnet new install VijayAnand.WinUITemplates
+```
+
+Latest preview version:
+
+```shell
+dotnet new install VijayAnand.WinUITemplates::2.2.0-preview.4
 ```
 
 If you've already installed this package, then it can be updated to the latest version with the below command:
