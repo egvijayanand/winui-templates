@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 2.2.0-preview.3:
+What's new in ver. 2.2.0-preview.4:
 -----------------------------------
+1. Templates updated to .NET 8 RC2
+
+v2.2.0-preview.3:
+
 1. Templates updated to .NET 8 RC1 changes
 
 2. The default value for Framework parameter (--framework / -f) is now updated as net8.0
