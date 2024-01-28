@@ -7,7 +7,9 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts
 |Channel|Version|
 |:---:|:---:|
 |Stable|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI CLI Templates (Stable)")|
+<!--
 |Preview|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/absoluteLatest "WinUI CLI Templates (Preview)")|
+-->
 
 <!-- CLI project template for developing `WinUI 3` App and Class Library and is named as `winui` and `winuilib` respectively. -->
 
@@ -26,7 +28,7 @@ And the supported values are:
 
 * net6.0
 * net7.0
-* net8.0 (the default value)
+* net8.0 _(the default value)_
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
 
@@ -46,17 +48,20 @@ Latest stable version:
 dotnet new install VijayAnand.WinUITemplates
 ```
 
+<!--
 Latest preview version:
 
 ```shell
 dotnet new install VijayAnand.WinUITemplates::2.2.0-preview.4
 ```
+-->
 
 If you've already installed this package, then it can be updated to the latest version with the below command:
 
 ```shell
 dotnet new update --check-only
 ```
+
 ```shell
 dotnet new update
 ```
@@ -67,14 +72,17 @@ App:
 ```shell
 dotnet new winui -n MyApp
 ```
+
 .NET 7 solution:
 ```shell
 dotnet new winui -n MyApp -f net7.0
 ```
+
 MVVM based solution:
 ```shell
 dotnet new winui -n MyApp -mvvm
 ```
+
 Option to include only the MVVM NuGet package:
 ```shell
 dotnet new winui -n MyApp -imt
@@ -84,14 +92,17 @@ Blazor App:
 ```shell
 dotnet new winui-blazor -n MyApp
 ```
+
 .NET 7 solution:
 ```shell
 dotnet new winui-blazor -n MyApp -f net7.0
 ```
+
 MVVM based solution:
 ```shell
 dotnet new winui-blazor -n MyApp -mvvm
 ```
+
 Option to include only the MVVM NuGet package:
 ```shell
 dotnet new winui-blazor -n MyApp -imt
@@ -101,10 +112,12 @@ Library:
 ```shell
 dotnet new winuilib -n MyLib
 ```
+
 .NET 7 solution:
 ```shell
 dotnet new winuilib -n MyLib -f net7.0
 ```
+
 Option to include only the MVVM NuGet package:
 ```shell
 dotnet new winuilib -n MyLib -imt
@@ -112,24 +125,23 @@ dotnet new winuilib -n MyLib -imt
 
 Use the below .NET CLI command to create the items out these template:
 
-All of these item templates take two parameters:
+All of these item templates require the `name` parameter:
 
 * `-n` | `--name` - Name of the item
-* `-na` | `--namespace` - Namespace for the item being created
 
-*Note: While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need to be mentioned as `-p:na`.*
+Auto suffixing of the Type name is supported for the files created with the Page and Window item templates.
 
 Page:
 ```shell
-dotnet new winui-page -n OrderPage -na MyApp.Pages
+dotnet new winui-page -n Order
 ```
 
 UserControl:
 ```shell
-dotnet new winui-usercontrol -n CardView -na MyApp.Views
+dotnet new winui-usercontrol -n CardView
 ```
 
 Window:
 ```shell
-dotnet new winui-window -n MainWindow -na MyApp
+dotnet new winui-window -n Home
 ```

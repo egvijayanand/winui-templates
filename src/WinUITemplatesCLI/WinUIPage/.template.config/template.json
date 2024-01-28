@@ -16,10 +16,10 @@
     "sourceName": "WinUIPage.1",
     "primaryOutputs": [
         {
-            "path": "WinUIPage.1.xaml"
+            "path": "WinUIPage.1Page.xaml"
         },
         {
-            "path": "WinUIPage.1.xaml.cs"
+            "path": "WinUIPage.1Page.xaml.cs"
         }
     ],
     "tags": {
@@ -28,10 +28,22 @@
     },
     "symbols": {
         "namespace": {
-            "type": "parameter",
+            "type": "bind",
+            "binding": "msbuild:RootNamespace",
             "replaces": "MyApp.Namespace",
-            "datatype": "text",
-            "description": "namespace for the generated code"
+            "defaultValue": "MyApp.Namespace"
+        }
+    },
+    "constraints": {
+        "dotnet7-sts": {
+            "type": "sdk-version",
+            "args": [
+                "[7.0,)"
+            ]
+        },
+        "csharp-only": {
+            "type": "project-capability",
+            "args": "CSharp"
         }
     }
 }
