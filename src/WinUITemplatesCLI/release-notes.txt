@@ -1,7 +1,21 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 2.2.0-preview.4:
------------------------------------
+What's new in ver. 2.2.0:
+-------------------------
+1. Templates updated for .NET MAUI stable version.
+
+2. Auto-binding the project's RootNamespace as the namespace for newly created source files from item templates (Supported only on .NET 7 SDK or later).
+
+3. Auto Suffix for the files created with the Page and Window item templates.
+
+Ensure the project is restored before making use of the item templates.
+
+dotnet new winui-page -n Order
+
+dotnet new winui-window -n Home
+
+v2.2.0-preview.4:
+
 1. Templates updated to .NET 8 RC2
 
 v2.2.0-preview.3:

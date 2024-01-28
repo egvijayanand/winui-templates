@@ -6,6 +6,7 @@
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
+        <MauiVersion>8.0.6</MauiVersion>
         <SingleProject>true</SingleProject>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
@@ -68,12 +69,12 @@
 
     <ItemGroup>
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*-*" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#elif (Net7)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.*" />
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage || Mvvm)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />

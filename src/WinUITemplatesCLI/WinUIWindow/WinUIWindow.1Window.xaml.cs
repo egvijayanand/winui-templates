@@ -2,9 +2,9 @@
 
 namespace MyApp.Namespace
 {
-    public partial class WinUIWindow__1 : Window
+    public partial class WinUIWindow__1Window : Window
     {
-        public WinUIWindow__1()
+        public WinUIWindow__1Window()
         {
             InitializeComponent();
         }

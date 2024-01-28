@@ -2,9 +2,9 @@
 
 namespace MyApp.Namespace
 {
-    public partial class WinUIPage__1 : Page
+    public partial class WinUIPage__1Page : Page
     {
-        public WinUIPage__1()
+        public WinUIPage__1Page()
         {
             InitializeComponent();
         }
