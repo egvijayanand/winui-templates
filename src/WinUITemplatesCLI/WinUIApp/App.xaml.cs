@@ -25,9 +25,9 @@ namespace WinUIApp._1
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             m_window = new MainWindow();
-            m_window.Activate();
+            m_window?.Activate();
         }
 
-        private Window m_window;
+        private Window? m_window;
     }
 }

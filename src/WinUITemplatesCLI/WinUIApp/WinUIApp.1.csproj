@@ -18,7 +18,7 @@
     <RootNamespace>WinUIApp._1</RootNamespace>
 
     <!-- App Options -->
-    <!--#if (Net8)-->
+    <!--#if (Net8OrLater)-->
     <UseRidGraph>true</UseRidGraph>
     <!--#endif-->
     <Platforms>x86;x64;arm64</Platforms>

@@ -43,7 +43,12 @@
                 {
                     "choice": "net8.0",
                     "description": "Target .NET 8",
-                    "displayName": ".NET 8 (Preview)"
+                    "displayName": ".NET 8 (LTS)"
+                },
+                {
+                    "choice": "net9.0",
+                    "description": "Target .NET 9",
+                    "displayName": ".NET 9 (Preview)"
                 }
             ],
             "replaces": "DOTNET_TFM",
@@ -90,9 +95,17 @@
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\")"
         },
+        "Net9": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net9.0\")"
+        },
         "Net7OrLater": {
             "type": "computed",
-            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
+        },
+        "Net8OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
         },
         "AddMvvmToolkitPackage": {
             "type": "computed",

@@ -4,7 +4,7 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageType>Template</PackageType>
 		<PackageId>VijayAnand.WinUITemplates</PackageId>
-		<PackageVersion>2.0.0</PackageVersion>
+		<PackageVersion>3.0.0</PackageVersion>
 		<Title>WinUI Templates</Title>
 		<Authors>Vijay Anand E G</Authors>
 		<Copyright>Copyright &#169; 2022-2024 Vijay Anand E G</Copyright>

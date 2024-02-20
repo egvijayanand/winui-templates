@@ -29,6 +29,9 @@ And the supported values are:
 * net6.0
 * net7.0
 * net8.0 _(the default value)_
+* net9.0
+
+Note: The default value for the framework parameter remains as `net8.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net9.0` is to be passed.
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
 
@@ -68,14 +71,19 @@ dotnet new update
 
 Use the below .NET CLI command to create the projects out these template:
 
-App:
+WinUI 3 App:
 ```shell
 dotnet new winui -n MyApp
 ```
 
-.NET 7 solution:
+.NET 7:
 ```shell
 dotnet new winui -n MyApp -f net7.0
+```
+
+.NET 9 Preview:
+```shell
+dotnet new winui -n MyApp -f net9.0
 ```
 
 MVVM based solution:
@@ -88,14 +96,19 @@ Option to include only the MVVM NuGet package:
 dotnet new winui -n MyApp -imt
 ```
 
-Blazor App:
+Blazor Hybrid App:
 ```shell
 dotnet new winui-blazor -n MyApp
 ```
 
-.NET 7 solution:
+.NET 7:
 ```shell
 dotnet new winui-blazor -n MyApp -f net7.0
+```
+
+.NET 9 Preview:
+```shell
+dotnet new winui-blazor -n MyApp -f net9.0
 ```
 
 MVVM based solution:
@@ -113,9 +126,14 @@ Library:
 dotnet new winuilib -n MyLib
 ```
 
-.NET 7 solution:
+.NET 7:
 ```shell
 dotnet new winuilib -n MyLib -f net7.0
+```
+
+.NET 9 Preview:
+```shell
+dotnet new winuilib -n MyLib -f net9.0
 ```
 
 Option to include only the MVVM NuGet package:
@@ -125,11 +143,11 @@ dotnet new winuilib -n MyLib -imt
 
 Use the below .NET CLI command to create the items out these template:
 
-All of these item templates require the `name` parameter:
+All these item templates require one mandatory parameter:
 
 * `-n` | `--name` - Name of the item
 
-Auto suffixing of the Type name is supported for the files created with the Page and Window item templates.
+Auto suffixing of the Type name is supported for the files created with the `Page` and `Window` item templates.
 
 Page:
 ```shell
