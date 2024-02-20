@@ -15,14 +15,14 @@ And the supported values are:
 
 * net6.0
 * net7.0
-* net8.0 (the default value)
+* net8.0 *(the default value)*
+* net9.0
 
-All of these item templates take two parameters:
+Note: The default value for the framework parameter remains as `net8.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net9.0` is to be passed.
+
+All these item templates require one mandatory parameter:
 
 * `-n` | `--name` - Name of the item
-* `-na` | `--namespace` - Namespace for the item being created
-
-*Note: While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be prefixed with `-p:` and hence this need to be mentioned as `-p:na`.*
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -32,11 +32,13 @@ Latest stable version:
 dotnet new install VijayAnand.WinUITemplates
 ```
 
+<!--
 Latest preview version:
 
 ```shell
 dotnet new install VijayAnand.WinUITemplates::2.2.0-preview.4
 ```
+-->
 
 If you've already installed this package, then it can be updated to the latest version with the below command:
 
@@ -49,7 +51,7 @@ dotnet new update
 
 Use the below .NET CLI command to create the projects out these template:
 
-App:
+WinUI 3 App:
 ```shell
 dotnet new winui -n MyApp
 ```
@@ -58,13 +60,25 @@ dotnet new winui -n MyApp
 dotnet new winui -n MyApp -f net7.0
 ```
 
-Blazor App:
+.NET 9 Preview:
+
+```shell
+dotnet new winui -n MyApp -f net9.0
+```
+
+Blazor Hybrid App:
 ```shell
 dotnet new winui-blazor -n MyApp
 ```
 
 ```shell
 dotnet new winui-blazor -n MyApp -f net7.0
+```
+
+.NET 9 Preview:
+
+```shell
+dotnet new winui-blazor -n MyApp -f net9.0
 ```
 
 Library:
@@ -74,6 +88,12 @@ dotnet new winuilib -n MyLib
 
 ```shell
 dotnet new winuilib -n MyLib -f net7.0
+```
+
+.NET 9 Preview:
+
+```shell
+dotnet new winuilib -n MyLib -f net9.0
 ```
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/) NuGet package.
@@ -90,17 +110,19 @@ dotnet new winuilib -n MyLib -imt
 
 Use the below .NET CLI command to create the items out these template:
 
+Auto suffixing of the Type name is supported for the files created with the `Page` and `Window` item templates.
+
 Page:
 ```shell
-dotnet new winui-page -n OrderPage -na MyApp.Pages
+dotnet new winui-page -n Order
 ```
 
 UserControl:
 ```shell
-dotnet new winui-usercontrol -n CardView -na MyApp.Views
+dotnet new winui-usercontrol -n CardView
 ```
 
 Window:
 ```shell
-dotnet new winui-window -n MainWindow -na MyApp
+dotnet new winui-window -n Home
 ```

@@ -26,7 +26,7 @@
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-<!--#if (Net8)-->
+<!--#if (Net8OrLater)-->
 <!--#if (Mvvm)-->
         <BlazorWebView
             HostPage="wwwroot/index.html"
