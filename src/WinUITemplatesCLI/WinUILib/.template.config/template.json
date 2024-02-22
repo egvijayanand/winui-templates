@@ -53,6 +53,13 @@
             "replaces": "DOTNET_TFM",
             "defaultValue": "net8.0"
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+        },
         "include-mvvm-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -77,9 +84,13 @@
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
         },
-        "AddMvvmToolkitPackage": {
+        "AddMvvmToolkit": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
+        },
+        "CentralPkgMgmt": {
+            "type": "computed",
+            "value": "(central-pkg-mgmt)"
         },
         "HostIdentifier": {
             "type": "bind",
@@ -98,6 +109,12 @@
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
                         "WinUILib.1.sln"
+                    ]
+                },
+                {
+                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "Directory.Packages.props"
                     ]
                 }
             ]

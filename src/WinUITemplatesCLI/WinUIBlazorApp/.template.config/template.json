@@ -73,6 +73,13 @@
             "defaultValue": "false",
             "description": "If true, configures the App as Unpackaged."
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+        },
         "no-solution-file": {
             "type": "parameter",
             "datatype": "bool",
@@ -107,9 +114,13 @@
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
         },
-        "AddMvvmToolkitPackage": {
+        "AddMvvmToolkit": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
+        },
+        "CentralPkgMgmt": {
+            "type": "computed",
+            "value": "(central-pkg-mgmt)"
         },
         "Mvvm": {
             "type": "computed",
@@ -141,6 +152,12 @@
                     "condition": "(!Mvvm)",
                     "exclude": [
                         "**/ViewModels/*"
+                    ]
+                },
+                {
+                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "Directory.Packages.props"
                     ]
                 }
             ]

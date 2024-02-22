@@ -1,7 +1,21 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.0.0:
+What's new in ver. 3.1.0:
 -------------------------
+Introduced an option to support NuGet's Central Package Management (CPM) feature in the project templates.
+
+-cpm | --central-pkg-mgmt - The default value is false.
+
+Note: This can also be used in combination with other options.
+
+dotnet new winui -o MyApp -cpm
+
+dotnet new winui-blazor -o HybridApp -cpm
+
+dotnet new winuilib -o MyLib -cpm
+
+v3.0.0:
+
 Templates updated for .NET 9 Preview 1.
 
 For this, have introduced an additional option to the framework parameter - net9.0
