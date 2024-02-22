@@ -9,7 +9,7 @@
 |WinUI 3 UserControl|winui-usercontrol|Item|
 |WinUI 3 Window|winui-window|Item|
 
-Both of the project templates takes the target framework as an input parameter, can be specified with `--framework` / `-f`.
+All the project templates takes the target framework as an input parameter, can be specified with `--framework` / `-f`.
 
 And the supported values are:
 
@@ -19,6 +19,12 @@ And the supported values are:
 * net9.0
 
 Note: The default value for the framework parameter remains as `net8.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net9.0` is to be passed.
+
+Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
+
+* `-cpm` | `--central-pkg-mgmt` - Default value is `false`
+
+Note: This can also be used in combination with other options.
 
 All these item templates require one mandatory parameter:
 
@@ -51,7 +57,8 @@ dotnet new update
 
 Use the below .NET CLI command to create the projects out these template:
 
-WinUI 3 App:
+**WinUI 3 App:**
+
 ```shell
 dotnet new winui -n MyApp
 ```
@@ -66,22 +73,34 @@ dotnet new winui -n MyApp -f net7.0
 dotnet new winui -n MyApp -f net9.0
 ```
 
-Blazor Hybrid App:
+Option to use the CPM feature:
 ```shell
-dotnet new winui-blazor -n MyApp
+dotnet new winui -n MyApp -cpm
+```
+
+**Blazor Hybrid App:**
+
+```shell
+dotnet new winui-blazor -n HybridApp
 ```
 
 ```shell
-dotnet new winui-blazor -n MyApp -f net7.0
+dotnet new winui-blazor -n HybridApp -f net7.0
 ```
 
 .NET 9 Preview:
 
 ```shell
-dotnet new winui-blazor -n MyApp -f net9.0
+dotnet new winui-blazor -n HybridApp -f net9.0
 ```
 
-Library:
+Option to use the CPM feature:
+```shell
+dotnet new winui-blazor -n HybridApp -cpm
+```
+
+**Library:**
+
 ```shell
 dotnet new winuilib -n MyLib
 ```
@@ -96,12 +115,21 @@ dotnet new winuilib -n MyLib -f net7.0
 dotnet new winuilib -n MyLib -f net9.0
 ```
 
+Option to use the CPM feature:
+```shell
+dotnet new winuilib -n MyLib -cpm
+```
+
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/) NuGet package.
 
 * `-imt` | `--include-mvvm-toolkit` - Default value is false
 
 ```shell
 dotnet new winui -n MyApp -imt
+```
+
+```shell
+dotnet new winui-blazor -n HybridApp -imt
 ```
 
 ```shell

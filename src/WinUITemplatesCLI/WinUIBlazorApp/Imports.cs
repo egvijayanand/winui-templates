@@ -1,4 +1,4 @@
-#if (AddMvvmToolkitPackage || Mvvm)
+#if (AddMvvmToolkit || Mvvm)
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
 

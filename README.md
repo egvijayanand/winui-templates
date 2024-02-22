@@ -41,6 +41,12 @@ Both the **App** project takes another optional parameter thus allowing it to be
 
 * `-mvvm` | `--use-mvvm` - Default value is `false`
 
+Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
+
+* `-cpm` | `--central-pkg-mgmt` - Default value is `false`
+
+Note: This can also be used in combination with other options.
+
 <!-- CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively. -->
 
 To install the template NuGet package, use the below .NET CLI command:
@@ -71,7 +77,8 @@ dotnet new update
 
 Use the below .NET CLI command to create the projects out these template:
 
-WinUI 3 App:
+**WinUI 3 App:**
+
 ```shell
 dotnet new winui -n MyApp
 ```
@@ -96,32 +103,44 @@ Option to include only the MVVM NuGet package:
 dotnet new winui -n MyApp -imt
 ```
 
-Blazor Hybrid App:
+Option to use the CPM feature:
 ```shell
-dotnet new winui-blazor -n MyApp
+dotnet new winui -n MyApp -cpm
+```
+
+**Blazor Hybrid App:**
+
+```shell
+dotnet new winui-blazor -n HybridApp
 ```
 
 .NET 7:
 ```shell
-dotnet new winui-blazor -n MyApp -f net7.0
+dotnet new winui-blazor -n HybridApp -f net7.0
 ```
 
 .NET 9 Preview:
 ```shell
-dotnet new winui-blazor -n MyApp -f net9.0
+dotnet new winui-blazor -n HybridApp -f net9.0
 ```
 
 MVVM based solution:
 ```shell
-dotnet new winui-blazor -n MyApp -mvvm
+dotnet new winui-blazor -n HybridApp -mvvm
 ```
 
 Option to include only the MVVM NuGet package:
 ```shell
-dotnet new winui-blazor -n MyApp -imt
+dotnet new winui-blazor -n HybridApp -imt
 ```
 
-Library:
+Option to use the CPM feature:
+```shell
+dotnet new winui-blazor -n HybridApp -cpm
+```
+
+**Library:**
+
 ```shell
 dotnet new winuilib -n MyLib
 ```
@@ -139,6 +158,11 @@ dotnet new winuilib -n MyLib -f net9.0
 Option to include only the MVVM NuGet package:
 ```shell
 dotnet new winuilib -n MyLib -imt
+```
+
+Option to use the CPM feature:
+```shell
+dotnet new winuilib -n MyLib -cpm
 ```
 
 Use the below .NET CLI command to create the items out these template:

@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>DOTNET_TFM-windows10.0.19041.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <PropertyGroup>
+        <TargetFramework>DOTNET_TFM-windows10.0.19041.0</TargetFramework>
+        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 
-    <!-- WinUI 3 -->
-    <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>true</EnableMsixTooling>
+        <!-- WinUI 3 -->
+        <UseWinUI>true</UseWinUI>
+        <EnableMsixTooling>true</EnableMsixTooling>
 
-    <!-- Project Options -->
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>WinUILib._1</RootNamespace>
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>WinUILib._1</RootNamespace>
 
-    <!-- App Options -->
-    <!--#if (Net8OrLater)-->
-    <UseRidGraph>true</UseRidGraph>
-    <!--#endif-->
-    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
-  </PropertyGroup>
+        <!-- App Options -->
+        <!--#if (Net8OrLater)-->
+        <UseRidGraph>true</UseRidGraph>
+        <!--#endif-->
+        <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.*" />
-    <!--#if (AddMvvmToolkitPackage)-->
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
-    <!--#endif-->
-  </ItemGroup>
+    <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
+        <PackageReference Include="Microsoft.WindowsAppSDK" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+        <!--#if (AddMvvmToolkit)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" />
+        <!--#endif-->
+        <!--#else-->
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.*" />
+        <!--#if (AddMvvmToolkit)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+        <!--#endif-->
+        <!--#endif-->
+    </ItemGroup>
 </Project>
