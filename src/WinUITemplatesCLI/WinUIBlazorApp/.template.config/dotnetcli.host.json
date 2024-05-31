@@ -4,6 +4,9 @@
         "Framework": {
             "longName": "framework"
         },
+        "application-id": {
+            "shortName": "ap"
+        },
         "Unpackaged": {
             "longName": "unpackaged"
         },
@@ -14,6 +17,6 @@
     "usageExamples": [
         "-f net6.0",
         "-f net7.0",
-        "-f net8.0"
+        "-f net9.0"
     ]
 }

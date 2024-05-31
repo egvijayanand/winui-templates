@@ -7,7 +7,7 @@
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <!--#if (Net8 && !CentralPkgMgmt)-->
-        <MauiVersion>8.0.7</MauiVersion>
+        <MauiVersion>8.*</MauiVersion>
         <!--#endif-->
         <SingleProject>true</SingleProject>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
@@ -29,7 +29,11 @@
         <ApplicationTitle>WinUIBlazorApp.1</ApplicationTitle>
 
         <!-- App Identifier -->
+        <!--#if (Net8OrLater)-->
+        <ApplicationId>com.companyname.myappid</ApplicationId>
+        <!--#else-->
         <ApplicationIdGuid>03cfa94b-a25c-4fa3-917f-101a8efac40f</ApplicationIdGuid>
+        <!--#endif-->
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -87,7 +91,7 @@
         <!--#if (Net9)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*-*" />
         <!--#elif (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*-*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />

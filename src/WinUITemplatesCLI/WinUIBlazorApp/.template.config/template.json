@@ -54,6 +54,12 @@
             "replaces": "DOTNET_TFM",
             "defaultValue": "net8.0"
         },
+        "application-id": {
+            "type": "parameter",
+            "description": "Overrides the App Identifier of the project",
+            "datatype": "text",
+            "defaultValue": "com.companyname.myappid"
+        },
         "use-mvvm": {
             "type": "parameter",
             "datatype": "bool",
@@ -85,6 +91,27 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
+        },
+        "appIdLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "application-id",
+                "toLower": true
+            },
+            "replaces": "com.companyname.myappid"
+        },
+        "nameLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "name",
+                "toLower": true
+            },
+            "replaces": "myappid",
+            "onlyIf": {
+                "after": "appIdLower"
+            }
         },
         "frameworkLower": {
             "type": "generated",
