@@ -43,6 +43,8 @@ Both the **App** project takes another optional parameter thus allowing it to be
 
 Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
 
+Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.3.0), added the ability to use the NuGet Central Package Management (CPM) feature within Visual Studio IDE.
+
 * `-cpm` | `--central-pkg-mgmt` - Default value is `false`
 
 Note: This can also be used in combination with other options.

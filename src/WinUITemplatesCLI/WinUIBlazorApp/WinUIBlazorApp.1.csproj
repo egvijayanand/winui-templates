@@ -6,9 +6,6 @@
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
-        <!--#if (Net8 && !CentralPkgMgmt)-->
-        <MauiVersion>8.*</MauiVersion>
-        <!--#endif-->
         <SingleProject>true</SingleProject>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
@@ -71,6 +68,9 @@
 
     <ItemGroup>
         <None Remove="WinUIBlazorApp.1.code-workspace" />
+        <!--#if (CentralPkgMgmt)-->
+        <None Remove="Directory.Packages.props" />
+        <!--#endif-->
     </ItemGroup>
 
     <ItemGroup>
@@ -83,7 +83,7 @@
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
         <!--#endif-->
-        <!--#if (AddMvvmToolkit || Mvvm)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <!--#else-->
@@ -99,10 +99,11 @@
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.*" />
         <!--#endif-->
-        <!--#if (AddMvvmToolkit || Mvvm)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <!--#endif-->
+
         <Manifest Include="$(ApplicationManifest)" />
     </ItemGroup>
 </Project>

@@ -4,8 +4,4 @@ global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Mvvm.Messaging;
 
 #endif
-#if Mvvm
-global using WinUIApp._1.ViewModels;
-
-#endif
 global using Microsoft.UI.Xaml;

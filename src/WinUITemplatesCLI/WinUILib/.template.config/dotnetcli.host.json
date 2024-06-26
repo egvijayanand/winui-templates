@@ -6,7 +6,8 @@
         }
     },
     "usageExamples": [
-        "--framework net6.0",
-        "-f net7.0"
+        "-f net6.0",
+        "-f net7.0",
+        "-f net9.0"
     ]
 }

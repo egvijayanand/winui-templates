@@ -14,26 +14,14 @@ EndProject
 #endif
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|arm64 = Debug|arm64
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|arm64 = Release|arm64
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|arm64.ActiveCfg = Debug|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|arm64.Build.0 = Debug|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|x64.Build.0 = Debug|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|x86.Build.0 = Debug|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|arm64.ActiveCfg = Release|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|arm64.Build.0 = Release|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|x64.ActiveCfg = Release|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|x64.Build.0 = Release|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|x86.ActiveCfg = Release|Any CPU
-		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|x86.Build.0 = Release|Any CPU
+		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C560DC6-4D31-42CC-9BFE-520100689835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C560DC6-4D31-42CC-9BFE-520100689835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

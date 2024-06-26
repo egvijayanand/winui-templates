@@ -15,7 +15,7 @@
     "sourceName": "WinUILib.1",
     "tags": {
         "language": "C#",
-        "type": "project",
+        "type": "solution",
         "vs_parametersToHide": "no-solution-file"
     },
     "guids": [
@@ -58,13 +58,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+            "displayName": "Use _NuGet Central Package Management (CPM)"
         },
         "include-mvvm-toolkit": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "If true, includes reference to the CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package."
+            "description": "If true, includes reference to the CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package.",
+            "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
         "no-solution-file": {
             "type": "parameter",
@@ -106,13 +107,13 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file)",
                     "exclude": [
                         "WinUILib.1.sln"
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]

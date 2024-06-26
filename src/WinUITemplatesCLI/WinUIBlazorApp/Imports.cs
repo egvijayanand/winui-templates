@@ -1,8 +1,10 @@
-#if (AddMvvmToolkit || Mvvm)
+#if AddMvvmToolkit
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
+global using CommunityToolkit.Mvvm.Messaging;
 
 #endif
+global using WinUIBlazorApp._1;
 #if Mvvm
 global using WinUIBlazorApp._1.ViewModels;
 #endif
