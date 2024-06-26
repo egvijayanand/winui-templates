@@ -21,10 +21,11 @@
         <!--#if (Net8OrLater)-->
         <UseRidGraph>true</UseRidGraph>
         <!--#endif-->
-        <Platforms>x86;x64;arm64</Platforms>
+        <Platforms>x86;x64;ARM64</Platforms>
         <ApplicationManifest>app.manifest</ApplicationManifest>
-        <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
-        <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+        <PublishProfile>win-$(Platform).pubxml</PublishProfile>
+        <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) >= 8">win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+        <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     </PropertyGroup>
 
     <ItemGroup>
@@ -36,21 +37,28 @@
         <Content Include="Assets\StoreLogo.png" />
         <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     </ItemGroup>
+    <!--#if (CentralPkgMgmt)-->
+
+    <ItemGroup>
+        <None Remove="Directory.Packages.props" />
+    </ItemGroup>
+    <!--#endif-->
 
     <ItemGroup>
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Microsoft.WindowsAppSDK" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
-        <!--#if (AddMvvmToolkit || Mvvm)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.*" />
-        <!--#if (AddMvvmToolkit || Mvvm)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <!--#endif-->
+
         <Manifest Include="$(ApplicationManifest)" />
     </ItemGroup>
 

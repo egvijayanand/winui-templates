@@ -15,7 +15,7 @@
     "sourceName": "WinUIBlazorApp.1",
     "tags": {
         "language": "C#",
-        "type": "project",
+        "type": "solution",
         "vs_parametersToHide": "no-solution-file"
     },
     "guids": [
@@ -54,6 +54,13 @@
             "replaces": "DOTNET_TFM",
             "defaultValue": "net8.0"
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Use _NuGet Central Package Management (CPM)"
+        },
         "application-id": {
             "type": "parameter",
             "description": "Overrides the App Identifier of the project",
@@ -65,26 +72,21 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use MVVM.",
-            "displayName": "Option to use MVVM"
+            "displayName": "Option to use _MVVM"
         },
         "include-mvvm-toolkit": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "If true, includes reference to the CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package."
+            "description": "If true, includes reference to the CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package.",
+            "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
         "Unpackaged": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "If true, configures the App as Unpackaged."
-        },
-        "central-pkg-mgmt": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+            "description": "If true, configures the App as Unpackaged.",
+            "displayName": "Configure the App as _Unpackaged"
         },
         "no-solution-file": {
             "type": "parameter",
@@ -143,7 +145,7 @@
         },
         "AddMvvmToolkit": {
             "type": "computed",
-            "value": "(include-mvvm-toolkit)"
+            "value": "(include-mvvm-toolkit || use-mvvm)"
         },
         "CentralPkgMgmt": {
             "type": "computed",
@@ -170,7 +172,7 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file)",
                     "exclude": [
                         "WinUIBlazorApp.1.sln"
                     ]
@@ -182,7 +184,7 @@
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!Net8 && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]

@@ -1,14 +1,22 @@
 <Project>
     <PropertyGroup>
+        <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
-        <MauiVersion>8.0.40</MauiVersion>
+        <MauiVersion>8.0.61</MauiVersion>
+        <!--#endif-->
+        <!--#else-->
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <!--#if (Net8)-->
+        <MauiVersion>8.*</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
+    <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
         <!--#if (Net8OrLater)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.4.24266.19" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.5.24306.7" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <!--#endif-->
@@ -18,8 +26,9 @@
         <!--#elif (Net7)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#endif-->
-        <!--#if (AddMvvmToolkit || Mvvm)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <!--#endif-->
     </ItemGroup>
+    <!--#endif-->
 </Project>
