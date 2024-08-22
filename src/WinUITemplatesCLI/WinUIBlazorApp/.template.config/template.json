@@ -54,6 +54,13 @@
             "replaces": "DOTNET_TFM",
             "defaultValue": "net8.0"
         },
+        "use-slnx": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use XML-based solution file (slnx).",
+            "displayName": "Option to use XML-based solution file (sln_x)"
+        },
         "central-pkg-mgmt": {
             "type": "parameter",
             "datatype": "bool",
@@ -102,6 +109,13 @@
                 "toLower": true
             },
             "replaces": "com.companyname.myappid"
+        },
+        "xmlEncodedName": {
+            "type": "derived",
+            "datatype": "string",
+            "replaces": "SAFE-NAME",
+            "valueSource": "name",
+            "valueTransform": "xmlEncode"
         },
         "nameLower": {
             "type": "generated",
@@ -155,6 +169,14 @@
             "type": "computed",
             "value": "(use-mvvm)"
         },
+        "SolnFile": {
+            "type": "computed",
+            "value": "(!no-solution-file)"
+        },
+        "UseSlnx": {
+            "type": "computed",
+            "value": "(use-slnx)"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -172,9 +194,25 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file)",
+                    "condition": "(!SolnFile)",
+                    "exclude": [
+                        "WinUIBlazorApp.1.sln",
+                        "WinUIBlazorApp.1.xml"
+                    ]
+                },
+                {
+                    "condition": "(UseSlnx)",
                     "exclude": [
                         "WinUIBlazorApp.1.sln"
+                    ],
+                    "rename": {
+                        "WinUIBlazorApp.1.xml": "WinUIBlazorApp.1.slnx"
+                    }
+                },
+                {
+                    "condition": "(!UseSlnx)",
+                    "exclude": [
+                        "WinUIBlazorApp.1.xml"
                     ]
                 },
                 {

@@ -37,10 +37,15 @@
         <Content Include="Assets\StoreLogo.png" />
         <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     </ItemGroup>
-    <!--#if (CentralPkgMgmt)-->
+    <!--#if (SolnFile && (CentralPkgMgmt || UseSlnx))-->
 
     <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
+        <!--#endif-->
+        <!--#if (UseSlnx)-->
+        <None Remove="SAFE-NAME.slnx" />
+        <!--#endif-->
     </ItemGroup>
     <!--#endif-->
 

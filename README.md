@@ -6,7 +6,7 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts
 
 |Channel|Version|
 |:---:|:---:|
-|Stable|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI CLI Templates (Stable)")|
+|Stable|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI CLI Templates (Stable)")|
 <!--
 |Preview|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/absoluteLatest "WinUI CLI Templates (Preview)")|
 -->
@@ -28,7 +28,7 @@ And the supported values are:
 
 * net6.0
 * net7.0
-* net8.0 _(the default value)_
+* net8.0 *(the default value)*
 * net9.0
 
 Note: The default value for the framework parameter remains as `net8.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net9.0` is to be passed.
@@ -43,11 +43,17 @@ Both the **App** project takes another optional parameter thus allowing it to be
 
 Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
 
-Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.3.0), added the ability to use the NuGet Central Package Management (CPM) feature within Visual Studio IDE.
-
 * `-cpm` | `--central-pkg-mgmt` - Default value is `false`
 
-Note: This can also be used in combination with other options.
+Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.3.0), added the ability to use the NuGet Central Package Management (CPM) feature within Visual Studio IDE.
+
+Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
+
+*This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
+
+* `-slnx` | `--use-slnx` - Default value is `false`
+
+*Note: These options may also be combined.*
 
 <!-- CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively. -->
 
@@ -110,6 +116,11 @@ Option to use the CPM feature:
 dotnet new winui -n MyApp -cpm
 ```
 
+Option to create the SLNX solution file:
+```shell
+dotnet new winui -n MyApp -slnx
+```
+
 **Blazor Hybrid App:**
 
 ```shell
@@ -141,6 +152,11 @@ Option to use the CPM feature:
 dotnet new winui-blazor -n HybridApp -cpm
 ```
 
+Option to create the SLNX solution file:
+```shell
+dotnet new winui-blazor -n HybridApp -slnx
+```
+
 **Library:**
 
 ```shell
@@ -165,6 +181,11 @@ dotnet new winuilib -n MyLib -imt
 Option to use the CPM feature:
 ```shell
 dotnet new winuilib -n MyLib -cpm
+```
+
+Option to create the SLNX solution file:
+```shell
+dotnet new winuilib -n MyLib -slnx
 ```
 
 Use the below .NET CLI command to create the items out these template:
