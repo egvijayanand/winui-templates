@@ -9,6 +9,9 @@
         },
         "use-mvvm": {
             "shortName": "mvvm"
+        },
+        "use-slnx": {
+            "shortName": "slnx"
         }
     },
     "usageExamples": [

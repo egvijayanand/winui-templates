@@ -2,7 +2,11 @@
 #if Net7OrLater
 using Microsoft.Extensions.Logging;
 #endif
+#if Net9
+using Microsoft.Maui.Controls.Embedding;
+#else
 using Microsoft.Maui.Embedding;
+#endif
 
 namespace WinUIBlazorApp._1
 {
@@ -11,7 +15,11 @@ namespace WinUIBlazorApp._1
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+#if Net9
+            builder.UseMauiEmbeddedApp<App>()
+#else
             builder.UseMauiEmbedding<App>()
+#endif
                    .ConfigureFonts(fonts =>
                    {
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

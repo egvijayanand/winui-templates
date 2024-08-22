@@ -53,6 +53,13 @@
             "replaces": "DOTNET_TFM",
             "defaultValue": "net8.0"
         },
+        "use-slnx": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use XML-based solution file (slnx).",
+            "displayName": "Option to use XML-based solution file (sln_x)"
+        },
         "central-pkg-mgmt": {
             "type": "parameter",
             "datatype": "bool",
@@ -81,6 +88,13 @@
                 "toLower": true
             }
         },
+        "xmlEncodedName": {
+            "type": "derived",
+            "datatype": "string",
+            "replaces": "SAFE-NAME",
+            "valueSource": "name",
+            "valueTransform": "xmlEncode"
+        },
         "Net8OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
@@ -92,6 +106,14 @@
         "CentralPkgMgmt": {
             "type": "computed",
             "value": "(central-pkg-mgmt)"
+        },
+        "SolnFile": {
+            "type": "computed",
+            "value": "(!no-solution-file)"
+        },
+        "UseSlnx": {
+            "type": "computed",
+            "value": "(use-slnx)"
         },
         "HostIdentifier": {
             "type": "bind",
@@ -107,9 +129,25 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file)",
+                    "condition": "(!SolnFile)",
+                    "exclude": [
+                        "WinUILib.1.sln",
+                        "WinUILib.1.xml"
+                    ]
+                },
+                {
+                    "condition": "(UseSlnx)",
                     "exclude": [
                         "WinUILib.1.sln"
+                    ],
+                    "rename": {
+                        "WinUILib.1.xml": "WinUILib.1.slnx"
+                    }
+                },
+                {
+                    "condition": "(!UseSlnx)",
+                    "exclude": [
+                        "WinUILib.1.xml"
                     ]
                 },
                 {

@@ -3,6 +3,9 @@
     "symbolInfo": {
         "Framework": {
             "longName": "framework"
+        },
+        "use-slnx": {
+            "shortName": "slnx"
         }
     },
     "usageExamples": [
