@@ -3,7 +3,7 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
-        <MauiVersion>8.0.80</MauiVersion>
+        <MauiVersion>8.0.90</MauiVersion>
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
@@ -15,7 +15,7 @@
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.7.24405.7" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.1.24431.7" />
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#elif (Net8)-->
@@ -27,7 +27,7 @@
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.1" />
         <!--#endif-->
     </ItemGroup>
     <!--#endif-->

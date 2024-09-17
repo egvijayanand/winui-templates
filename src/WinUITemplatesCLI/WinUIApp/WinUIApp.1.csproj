@@ -11,9 +11,13 @@
         <!--#if (Unpackaged)-->
         <WindowsPackageType>None</WindowsPackageType>
         <!--#endif-->
+        <!--#if (AddMvvmToolkit)-->
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!--#endif-->
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinUIApp._1</RootNamespace>
 
@@ -52,12 +56,14 @@
     <ItemGroup>
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Microsoft.WindowsAppSDK" />
+        <PackageReference Include="Microsoft.Web.WebView2" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
         <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
+        <PackageReference Include="Microsoft.Web.WebView2" Version="1.*" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.*" />
         <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />

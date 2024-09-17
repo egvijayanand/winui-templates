@@ -13,6 +13,36 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts
 
 <!-- CLI project template for developing `WinUI 3` App and Class Library and is named as `winui` and `winuilib` respectively. -->
 
+#### Install Package:
+
+To install the template NuGet package, use the below .NET CLI command:
+
+Latest stable version:
+
+```shell
+dotnet new install VijayAnand.WinUITemplates
+```
+
+<!--
+Latest preview version:
+
+```shell
+dotnet new install VijayAnand.WinUITemplates::2.2.0-preview.4
+```
+-->
+
+If you've already installed this package, then it can be updated to the latest version with the below command:
+
+```shell
+dotnet new update --check-only
+```
+
+```shell
+dotnet new update
+```
+
+#### Templates Included
+
 |Item|Template Name|Type|
 |:---:|:---:|:---:|
 |WinUI 3 App|winui|Project|
@@ -57,35 +87,9 @@ Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 <!-- CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively. -->
 
-To install the template NuGet package, use the below .NET CLI command:
-
-Latest stable version:
-
-```shell
-dotnet new install VijayAnand.WinUITemplates
-```
-
-<!--
-Latest preview version:
-
-```shell
-dotnet new install VijayAnand.WinUITemplates::2.2.0-preview.4
-```
--->
-
-If you've already installed this package, then it can be updated to the latest version with the below command:
-
-```shell
-dotnet new update --check-only
-```
-
-```shell
-dotnet new update
-```
-
 Use the below .NET CLI command to create the projects out these template:
 
-**WinUI 3 App:**
+#### WinUI 3 App:
 
 ```shell
 dotnet new winui -n MyApp
@@ -121,7 +125,7 @@ Option to create the SLNX solution file:
 dotnet new winui -n MyApp -slnx
 ```
 
-**Blazor Hybrid App:**
+#### Blazor Hybrid App:
 
 ```shell
 dotnet new winui-blazor -n HybridApp
@@ -157,7 +161,7 @@ Option to create the SLNX solution file:
 dotnet new winui-blazor -n HybridApp -slnx
 ```
 
-**Library:**
+#### Library:
 
 ```shell
 dotnet new winuilib -n MyLib
@@ -187,6 +191,8 @@ Option to create the SLNX solution file:
 ```shell
 dotnet new winuilib -n MyLib -slnx
 ```
+
+#### Item Templates:
 
 Use the below .NET CLI command to create the items out these template:
 

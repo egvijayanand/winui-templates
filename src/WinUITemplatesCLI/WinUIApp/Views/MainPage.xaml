@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Window
-    x:Class="WinUIApp._1.MainWindow"
+<Page
+    x:Class="WinUIApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:WinUIApp._1"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Window.Content>
+    <Page.Content>
         <StackPanel
             HorizontalAlignment="Center"
             Spacing="25"
@@ -47,5 +47,5 @@
                 Style="{StaticResource PrimaryAction}" />
             <!--#endif-->
         </StackPanel>
-    </Window.Content>
-</Window>
+    </Page.Content>
+</Page>
