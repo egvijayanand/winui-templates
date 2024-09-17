@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.4.0:
+What's new in ver. 3.5.0:
 -------------------------
+Frame-based navigation in the App project template.
+
+The WindowsSdkPackageVersion property has been temporarily included to make use of the latest version of the MVVM toolkit.
+
+v3.4.0:
+
 1. Templates updated to support .NET 9 Preview 7 and the latest .NET 8 release.
 
 2. Introduced an option to support the XML-based solution file (slnx) format.

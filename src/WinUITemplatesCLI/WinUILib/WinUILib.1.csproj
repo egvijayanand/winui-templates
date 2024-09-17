@@ -10,8 +10,12 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinUILib._1</RootNamespace>
+        <!--#if (AddMvvmToolkit)-->
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!--#endif-->
 
         <!-- App Options -->
         <!--#if (Net8OrLater)-->

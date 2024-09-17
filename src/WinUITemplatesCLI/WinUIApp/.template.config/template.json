@@ -141,7 +141,7 @@
             "path": "App.xaml.cs"
         },
         {
-            "path": "MainWindow.xaml.cs"
+            "path": "MainPage.xaml.cs"
         }
     ],
     "sources": [

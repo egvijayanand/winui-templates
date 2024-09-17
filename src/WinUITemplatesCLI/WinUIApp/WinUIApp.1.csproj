@@ -11,9 +11,13 @@
         <!--#if (Unpackaged)-->
         <WindowsPackageType>None</WindowsPackageType>
         <!--#endif-->
+        <!--#if (AddMvvmToolkit)-->
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!--#endif-->
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinUIApp._1</RootNamespace>
 
