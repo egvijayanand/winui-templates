@@ -56,12 +56,11 @@ All three project templates takes the target framework as an input parameter, ca
 
 And the supported values are:
 
-* net6.0
-* net7.0
-* net8.0 *(the default value)*
-* net9.0
+* net8.0
+* net9.0 *(the default value)*
+* net10.0
 
-Note: The default value for the framework parameter remains as `net8.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net9.0` is to be passed.
+Note: The default value for the framework parameter remains as `net9.0` (the latest stable channel), which means to create a project for .NET 10 (the preview channel), an explicit value of `net10.0` is to be passed.
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
 
@@ -95,14 +94,14 @@ Use the below .NET CLI command to create the projects out these template:
 dotnet new winui -n MyApp
 ```
 
-.NET 7:
+.NET 8:
 ```shell
-dotnet new winui -n MyApp -f net7.0
+dotnet new winui -n MyApp -f net8.0
 ```
 
-.NET 9 Preview:
+.NET 10 Preview:
 ```shell
-dotnet new winui -n MyApp -f net9.0
+dotnet new winui -n MyApp -f net10.0
 ```
 
 MVVM based solution:
@@ -133,12 +132,12 @@ dotnet new winui-blazor -n HybridApp
 
 .NET 7:
 ```shell
-dotnet new winui-blazor -n HybridApp -f net7.0
+dotnet new winui-blazor -n HybridApp -f net8.0
 ```
 
-.NET 9 Preview:
+.NET 10 Preview:
 ```shell
-dotnet new winui-blazor -n HybridApp -f net9.0
+dotnet new winui-blazor -n HybridApp -f net10.0
 ```
 
 MVVM based solution:
@@ -169,12 +168,12 @@ dotnet new winuilib -n MyLib
 
 .NET 7:
 ```shell
-dotnet new winuilib -n MyLib -f net7.0
+dotnet new winuilib -n MyLib -f net8.0
 ```
 
-.NET 9 Preview:
+.NET 10 Preview:
 ```shell
-dotnet new winuilib -n MyLib -f net9.0
+dotnet new winuilib -n MyLib -f net10.0
 ```
 
 Option to include only the MVVM NuGet package:

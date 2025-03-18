@@ -6,7 +6,7 @@ namespace MyApp.Namespace
     {
         public WinUIWindow__1Window()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

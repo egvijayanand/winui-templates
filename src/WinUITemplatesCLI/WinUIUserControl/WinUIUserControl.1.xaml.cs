@@ -6,7 +6,7 @@ namespace MyApp.Namespace
     {
         public WinUIUserControl__1()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

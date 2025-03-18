@@ -12,7 +12,7 @@
         <WindowsPackageType>None</WindowsPackageType>
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!-- <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion> -->
         <!--#endif-->
 
         <!-- Project Options -->

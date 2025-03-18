@@ -7,7 +7,7 @@
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (forecasts is null)
 {
 	<p><em>Loading...</em></p>
 }
@@ -49,6 +49,7 @@ else
 			_ => "table"
 		};
 
+		await Task.Delay(500); // Simulate a network delay
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
 	}
 }

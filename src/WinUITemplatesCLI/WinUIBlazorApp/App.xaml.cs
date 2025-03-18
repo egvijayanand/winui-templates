@@ -1,25 +1,55 @@
-﻿namespace WinUIBlazorApp._1
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Navigation;
+using Application = Microsoft.UI.Xaml.Application;
+using Frame = Microsoft.UI.Xaml.Controls.Frame;
+using Window = Microsoft.UI.Xaml.Window;
+
+namespace WinUIBlazorApp._1
 {
+    /// <summary>
+    /// Provides application-specific behavior to supplement the default Application class.
+    /// </summary>
     public partial class App : Application
     {
+        private Window window = Window.Current;
+
+        /// <summary>
+        /// Initializes the singleton application object.  This is the first line of authored code
+        /// executed, and as such is the logical equivalent of main() or WinMain().
+        /// </summary>
         public App()
         {
-            InitializeComponent();
-#if (!Net9)
-
-            MainPage = new MainPage();
-#endif
+            this.InitializeComponent();
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
+        /// <summary>
+        /// Invoked when the application is launched normally by the end user.  Other entry points
+        /// will be used such as when the application is launched to open a specific file.
+        /// </summary>
+        /// <param name="e">Details about the launch request and process.</param>
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-#if Net9
-            return new Window(new MainPage()) { Title = "WinUIBlazorApp._1" };
-#else
-            var window = base.CreateWindow(activationState);
-            window.Title = "WinUIBlazorApp._1";
-            return window;
-#endif
+            window ??= new Window();
+
+            if (window.Content is not Frame rootFrame)
+            {
+                rootFrame = new Frame();
+                rootFrame.NavigationFailed += OnNavigationFailed;
+                window.Content = rootFrame;
+            }
+
+            _ = rootFrame.Navigate(typeof(MainPage), e.Arguments);
+            window.Activate();
+        }
+
+        /// <summary>
+        /// Invoked when Navigation to a certain page fails
+        /// </summary>
+        /// <param name="sender">The Frame which failed navigation</param>
+        /// <param name="e">Details about the navigation failure</param>
+        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        {
+            throw new Exception($"Failed to load Page - {e.SourcePageType.FullName}");
         }
     }
 }

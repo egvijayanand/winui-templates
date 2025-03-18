@@ -1,54 +1,26 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Application
     x:Class="WinUIBlazorApp._1.App"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinUIBlazorApp._1"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:WinUIBlazorApp._1"
     mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles.xaml" />
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
-            <!-- Additional Styles -->
-            <x:Double x:Key="ItemSpacing">10</x:Double>
+            <!-- Other app resources here -->
+            <Color x:Key="Primary">#512BD4</Color>
 
-            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
-                <Setter Property="Spacing"
-                        Value="{StaticResource ItemSpacing}" />
-            </Style>
+            <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />
+            <SolidColorBrush x:Key="WhiteBrush" Color="White" />
+            <SolidColorBrush x:Key="BlackBrush" Color="Black" />
 
-            <Style x:Key="MauiLabel" TargetType="Label">
-                <Setter Property="TextColor"
-                        Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
-            </Style>
-
-            <Style x:Key="Action" TargetType="Button">
-                <Setter Property="BackgroundColor"
-                        Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
-                <Setter Property="TextColor"
-                        Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
-                <Setter Property="FontFamily"
-                        Value="{StaticResource AppFont}" />
-                <Setter Property="FontSize"
-                        Value="{StaticResource AppFontSize}" />
-                <Setter Property="Padding"
-                        Value="14,10" />
-            </Style>
-
-            <Style x:Key="PrimaryAction"
-                   TargetType="Button"
-                   BasedOn="{StaticResource Action}">
-                <Setter Property="BackgroundColor"
-                        Value="{StaticResource Primary}" />
-                <Setter Property="FontAttributes"
-                        Value="Bold" />
-                <Setter Property="TextColor"
-                        Value="{StaticResource White}" />
-            </Style>
+            <x:Double x:Key="AppFontSize">14</x:Double>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

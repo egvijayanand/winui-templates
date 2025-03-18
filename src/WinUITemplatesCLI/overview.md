@@ -13,12 +13,11 @@ All the project templates takes the target framework as an input parameter, can 
 
 And the supported values are:
 
-* net6.0
-* net7.0
-* net8.0 *(the default value)*
-* net9.0
+* net8.0
+* net9.0 *(the default value)*
+* net10.0
 
-Note: The default value for the framework parameter remains as `net8.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net9.0` is to be passed.
+Note: The default value for the framework parameter remains as `net9.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net10.0` is to be passed.
 
 Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
 
@@ -64,13 +63,13 @@ dotnet new winui -n MyApp
 ```
 
 ```shell
-dotnet new winui -n MyApp -f net7.0
+dotnet new winui -n MyApp -f net8.0
 ```
 
-.NET 9 Preview:
+.NET 10 Preview:
 
 ```shell
-dotnet new winui -n MyApp -f net9.0
+dotnet new winui -n MyApp -f net10.0
 ```
 
 Option to use the CPM feature:
@@ -85,13 +84,13 @@ dotnet new winui-blazor -n HybridApp
 ```
 
 ```shell
-dotnet new winui-blazor -n HybridApp -f net7.0
+dotnet new winui-blazor -n HybridApp -f net8.0
 ```
 
-.NET 9 Preview:
+.NET 10 Preview:
 
 ```shell
-dotnet new winui-blazor -n HybridApp -f net9.0
+dotnet new winui-blazor -n HybridApp -f net10.0
 ```
 
 Option to use the CPM feature:
@@ -106,13 +105,13 @@ dotnet new winuilib -n MyLib
 ```
 
 ```shell
-dotnet new winuilib -n MyLib -f net7.0
+dotnet new winuilib -n MyLib -f net8.0
 ```
 
-.NET 9 Preview:
+.NET 10 Preview:
 
 ```shell
-dotnet new winuilib -n MyLib -f net9.0
+dotnet new winuilib -n MyLib -f net10.0
 ```
 
 Option to use the CPM feature:
