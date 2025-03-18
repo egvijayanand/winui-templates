@@ -1,7 +1,25 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.5.0:
+What's new in ver. 4.0.0:
 -------------------------
+Support for creating WinUI projects on .NET 10 preview and .NET 9 stable.
+
+For this, have introduced an additional option to the framework parameter - net10.0
+
+Note: The default value for the framework parameter remains as net9.0, which means to create a project for .NET 10, an explicit value of net10.0 is to be passed.
+
+dotnet new winui -o MyApp -f net10.0
+
+By default, the package type is now set to Unpackaged.
+
+WinUI Blazor project template is revamped to use Native Embedding process.
+
+Note: It is not possible to use WinUI XAML and .NET MAUI XAML in the same project.
+
+As an alternative solution, abstract .NET MAUI components as a class library and reference it in the WinUI project.
+
+v3.5.0:
+
 Frame-based navigation in the App project template.
 
 The WindowsSdkPackageVersion property has been temporarily included to make use of the latest version of the MVVM toolkit.

@@ -30,35 +30,30 @@
             "description": "Option to choose the App target framework.",
             "choices": [
                 {
-                    "choice": "net6.0",
-                    "description": "Target .NET 6",
-                    "displayName": ".NET 6 (LTS)"
+                    "choice": "net10.0",
+                    "description": "Target .NET 10",
+                    "displayName": ".NET 10 (Preview)"
                 },
                 {
-                    "choice": "net7.0",
-                    "description": "Target .NET 7",
-                    "displayName": ".NET 7 (STS)"
+                    "choice": "net9.0",
+                    "description": "Target .NET 9",
+                    "displayName": ".NET 9 (STS)"
                 },
                 {
                     "choice": "net8.0",
                     "description": "Target .NET 8",
                     "displayName": ".NET 8 (LTS)"
-                },
-                {
-                    "choice": "net9.0",
-                    "description": "Target .NET 9",
-                    "displayName": ".NET 9 (Preview)"
                 }
             ],
             "replaces": "DOTNET_TFM",
-            "defaultValue": "net8.0"
+            "defaultValue": "net9.0"
         },
         "use-slnx": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use XML-based solution file (slnx).",
-            "displayName": "Option to use XML-based solution file (sln_x)"
+            "displayName": "Option to use _XML-based solution file (slnx)"
         },
         "central-pkg-mgmt": {
             "type": "parameter",
@@ -83,7 +78,7 @@
         "Unpackaged": {
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "If true, configures the App as Unpackaged."
         },
         "no-solution-file": {
@@ -109,7 +104,7 @@
         },
         "Net8OrLater": {
             "type": "computed",
-            "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
+            "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\" || frameworkLower == \"net10.0\")"
         },
         "AddMvvmToolkit": {
             "type": "computed",

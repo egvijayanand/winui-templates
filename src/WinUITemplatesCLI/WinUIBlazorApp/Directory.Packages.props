@@ -2,32 +2,43 @@
     <PropertyGroup>
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net8)-->
-        <MauiVersion>8.0.90</MauiVersion>
+        <!--#if (Net10)-->
+        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <!--#elif (Net8)-->
+        <MauiVersion>8.0.100</MauiVersion>
+        <!--#else-->
+        <MauiVersion>9.0.50</MauiVersion>
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <!--#if (Net8)-->
+        <!--#if (Net10)-->
+        <MauiVersion>10.*-*</MauiVersion>
+        <!--#elif (Net8)-->
         <MauiVersion>8.*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>9.*</MauiVersion>
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
-        <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.1.24431.7" />
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
-        <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.6.250205002" />
+        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3124.44" />
+        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
+        <!--#if (Net10)-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.1.25080.5" />
         <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.2" />
+        <!--#endif-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <!--#if (Net8)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#elif (Net7)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.1" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <!--#endif-->
     </ItemGroup>
     <!--#endif-->

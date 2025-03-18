@@ -1,8 +1,6 @@
 ﻿using WinUIBlazorApp._1.Data;
-#if Net7OrLater
 using Microsoft.Extensions.Logging;
-#endif
-#if Net9
+#if Net9OrLater
 using Microsoft.Maui.Controls.Embedding;
 #else
 using Microsoft.Maui.Embedding;
@@ -15,10 +13,10 @@ namespace WinUIBlazorApp._1
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-#if Net9
-            builder.UseMauiEmbeddedApp<App>()
+#if Net9OrLater
+            builder.UseMauiEmbeddedApp<MyApp>()
 #else
-            builder.UseMauiEmbedding<App>()
+            builder.UseMauiEmbedding<MyApp>()
 #endif
                    .ConfigureFonts(fonts =>
                    {
@@ -27,7 +25,9 @@ namespace WinUIBlazorApp._1
                    });
 
             builder.Services.AddMauiBlazorWebView();
-#if Net7OrLater
+            builder.Services.AddSingleton(AppInfo.Current);
+            builder.Services.AddSingleton<WeatherForecastService>();
+
 //-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!
@@ -35,15 +35,6 @@ namespace WinUIBlazorApp._1
             builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-#else
-//-:cnd:noEmit
-#if DEBUG
-            builder.Services.AddBlazorWebViewDeveloperTools();
-#endif
-//+:cnd:noEmit
-#endif
-            builder.Services.AddSingleton(AppInfo.Current);
-            builder.Services.AddSingleton<WeatherForecastService>();
 
             return builder.Build();
         }

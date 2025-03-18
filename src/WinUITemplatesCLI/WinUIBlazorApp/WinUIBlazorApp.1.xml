@@ -1,10 +1,14 @@
 <Solution>
-<!--#if (Net8 || CentralPkgMgmt)-->
+    <Configurations>
+        <Platform Name="x64" />
+    </Configurations>
+<!--#if (Net8OrLater || CentralPkgMgmt)-->
     <Folder Name="/Solution Items/">
         <File Path="Directory.Packages.props" />
     </Folder>
 <!--#endif-->
     <Project Path="SAFE-NAME.csproj">
+        <Platform Solution="*|x64" Project="x64" />
         <Deploy />
     </Project>
     <Properties Name="Visual Studio">

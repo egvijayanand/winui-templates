@@ -6,7 +6,7 @@ namespace MyApp.Namespace
     {
         public WinUIPage__1Page()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
