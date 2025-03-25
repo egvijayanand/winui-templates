@@ -80,6 +80,8 @@ Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 *This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
 
+Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.0.0), added another option (`net10.0`) to the `framework` parameter to support .NET 10 Previews and revamped the WinUI Blazor project template.
+
 * `-slnx` | `--use-slnx` - Default value is `false`
 
 *Note: These options may also be combined.*
@@ -130,7 +132,7 @@ dotnet new winui -n MyApp -slnx
 dotnet new winui-blazor -n HybridApp
 ```
 
-.NET 7:
+.NET 8:
 ```shell
 dotnet new winui-blazor -n HybridApp -f net8.0
 ```
@@ -166,7 +168,7 @@ dotnet new winui-blazor -n HybridApp -slnx
 dotnet new winuilib -n MyLib
 ```
 
-.NET 7:
+.NET 8:
 ```shell
 dotnet new winuilib -n MyLib -f net8.0
 ```
