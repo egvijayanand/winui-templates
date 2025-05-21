@@ -3,11 +3,11 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
-        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <MauiVersion>10.0.0-preview.4.25263.4</MauiVersion>
         <!--#elif (Net8)-->
         <MauiVersion>8.0.100</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.50</MauiVersion>
+        <MauiVersion>9.0.70</MauiVersion>
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
@@ -22,15 +22,15 @@
     </PropertyGroup>
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
-        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.6.250205002" />
-        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3124.44" />
-        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
+        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250513003" />
+        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3240.44" />
+        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
         <!--#if (Net10)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.1.25080.5" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.4.25258.110" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.2" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
