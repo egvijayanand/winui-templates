@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>DOTNET_TFM</TargetFramework>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>WinUIBlazorApp._1</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
+        <!--#if (AddMvvmToolkit)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" IncludeAssets="compile;runtime" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+        <PackageReference Include="Microsoft.Maui.Controls" />
+        <!--#else-->
+        <!--#if (AddMvvmToolkit)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" IncludeAssets="compile;runtime" />
+        <!--#if (Net10)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" />
+        <!--#elif (Net8)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" />
+        <!--#else-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <!--#endif-->
+    </ItemGroup>
+    <!--#if (RazorLib)-->
+
+    <ItemGroup>
+        <ProjectReference Include="..\SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
+    </ItemGroup>
+    <!--#endif-->
+
+</Project>

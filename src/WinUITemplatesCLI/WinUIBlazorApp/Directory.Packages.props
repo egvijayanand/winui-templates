@@ -3,11 +3,11 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
-        <MauiVersion>10.0.0-preview.4.25263.4</MauiVersion>
+        <MauiVersion>10.0.0-preview.6.25359.8</MauiVersion>
         <!--#elif (Net8)-->
         <MauiVersion>8.0.100</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.70</MauiVersion>
+        <MauiVersion>9.0.90</MauiVersion>
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
@@ -22,18 +22,30 @@
     </PropertyGroup>
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
-        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250513003" />
-        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3240.44" />
-        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
+        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
+        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3351.48" />
+        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4654" />
         <!--#if (Net10)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.4.25258.110" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.6.25358.103" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.7" />
+        <!--#endif-->
+        <!--#if (RazorLib)-->
+        <!--#if (Net10)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.6.25358.103" />
+        <!--#elif (Net8)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.18" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.7" />
+        <!--#endif-->
         <!--#endif-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <!--#if (RazorLib)-->
+        <PackageVersion Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+        <!--#endif-->
         <!--#if (Net8)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
