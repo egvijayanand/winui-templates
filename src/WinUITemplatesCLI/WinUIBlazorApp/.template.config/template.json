@@ -22,6 +22,8 @@
         "03cfa94b-a25c-4fa3-917f-101a8efac40f",
         "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
         "2DFEBDDB-0E75-4461-9AC9-76483607B99E",
+        "0C2E5195-51A8-46B2-B820-B334F0A8F366",
+        "33EA6DA4-C440-48C6-9AC5-33313A2E5041",
         "43174702-C7FA-4CB5-B96F-6C3035DAC71E"
     ],
     "symbols": {
@@ -68,6 +70,20 @@
             "description": "Overrides the App Identifier of the project",
             "datatype": "text",
             "defaultValue": "com.companyname.myappid"
+        },
+        "maui-class-library": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create a .NET MAUI Class Library (MCL) to abstract Shared components.",
+            "displayName": "Option to create a .NET MAUI Class _Library (MCL) to abstract Shared components"
+        },
+        "razor-class-library": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create a Razor Class Library (RCL) to abstract Razor components.",
+            "displayName": "Option to create a _Razor Class Library (RCL) to abstract Razor components"
         },
         "use-mvvm": {
             "type": "parameter",
@@ -160,6 +176,14 @@
             "type": "computed",
             "value": "(central-pkg-mgmt)"
         },
+        "MauiLib": {
+            "type": "computed",
+            "value": "(maui-class-library)"
+        },
+        "RazorLib": {
+            "type": "computed",
+            "value": "(razor-class-library)"
+        },
         "Mvvm": {
             "type": "computed",
             "value": "(use-mvvm)"
@@ -211,10 +235,155 @@
                     ]
                 },
                 {
+                    "condition": "(Mvvm && MauiLib)",
+                    "rename": {
+                        "ViewModels/BaseViewModel.cs": "WinUIBlazorApp.1.MauiLib/ViewModels/BaseViewModel.cs",
+                        "ViewModels/MauiViewModel.cs": "WinUIBlazorApp.1.MauiLib/ViewModels/MauiViewModel.cs"
+                    }
+                },
+                {
                     "condition": "(!Mvvm)",
                     "exclude": [
                         "**/ViewModels/*"
                     ]
+                },
+                {
+                    "condition": "(!MauiLib)",
+                    "exclude": [
+                        "WinUIBlazorApp.1.MauiLib/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!RazorLib)",
+                    "exclude": [
+                        "WinUIBlazorApp.1.RazorLib/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(MauiLib || RazorLib))",
+                    "rename": {
+                        "WinUIBlazorApp.1/_Imports.razor": "_Imports.razor",
+                        "WinUIBlazorApp.1/App.xaml": "App.xaml",
+                        "WinUIBlazorApp.1/App.xaml.cs": "App.xaml.cs",
+                        "WinUIBlazorApp.1/Imports.cs": "Imports.cs"
+                    }
+                },
+                {
+                    "condition": "(MauiLib || RazorLib)",
+                    "rename": {
+                        "Properties/PublishProfiles/win-arm64.pubxml": "WinUIBlazorApp.1/Properties/PublishProfiles/win-arm64.pubxml",
+                        "Properties/PublishProfiles/win-x64.pubxml": "WinUIBlazorApp.1/Properties/PublishProfiles/win-x64.pubxml",
+                        "Properties/PublishProfiles/win-x86.pubxml": "WinUIBlazorApp.1/Properties/PublishProfiles/win-x86.pubxml",
+                        "Properties/launchSettings.json": "WinUIBlazorApp.1/Properties/launchSettings.json",
+                        "Views/HybridPage.cs": "WinUIBlazorApp.1/Views/HybridPage.cs",
+                        "Views/MainPage.xaml": "WinUIBlazorApp.1/Views/MainPage.xaml",
+                        "Views/MainPage.xaml.cs": "WinUIBlazorApp.1/Views/MainPage.xaml.cs",
+                        "wwwroot/css/bootstrap/bootstrap.min.css": "WinUIBlazorApp.1/wwwroot/css/bootstrap/bootstrap.min.css",
+                        "wwwroot/css/bootstrap/bootstrap.min.css.map": "WinUIBlazorApp.1/wwwroot/css/bootstrap/bootstrap.min.css.map",
+                        "wwwroot/css/font-awesome/css/all.min.css": "WinUIBlazorApp.1/wwwroot/css/font-awesome/css/all.min.css",
+                        "wwwroot/css/font-awesome/webfonts/fa-brands-400.ttf": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-brands-400.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-brands-400.woff2": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-brands-400.woff2",
+                        "wwwroot/css/font-awesome/webfonts/fa-regular-400.ttf": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-regular-400.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-regular-400.woff2": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-regular-400.woff2",
+                        "wwwroot/css/font-awesome/webfonts/fa-solid-900.ttf": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-solid-900.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-solid-900.woff2": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-solid-900.woff2",
+                        "wwwroot/css/font-awesome/webfonts/fa-v4compatibility.ttf": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-v4compatibility.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-v4compatibility.woff2": "WinUIBlazorApp.1/wwwroot/css/font-awesome/webfonts/fa-v4compatibility.woff2",
+                        "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css": "WinUIBlazorApp.1/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.eot": "WinUIBlazorApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.otf": "WinUIBlazorApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.svg": "WinUIBlazorApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf": "WinUIBlazorApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.woff": "WinUIBlazorApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+                        "wwwroot/css/open-iconic/FONT-LICENSE": "WinUIBlazorApp.1/wwwroot/css/open-iconic/FONT-LICENSE",
+                        "wwwroot/css/open-iconic/ICON-LICENSE": "WinUIBlazorApp.1/wwwroot/css/open-iconic/ICON-LICENSE",
+                        "wwwroot/css/open-iconic/README.md": "WinUIBlazorApp.1/wwwroot/css/open-iconic/README.md",
+                        "wwwroot/css/app.css": "WinUIBlazorApp.1/wwwroot/css/app.css",
+                        "wwwroot/favicon.ico": "WinUIBlazorApp.1/wwwroot/favicon.ico",
+                        "wwwroot/index.html": "WinUIBlazorApp.1/wwwroot/index.html",
+                        "app.manifest": "WinUIBlazorApp.1/app.manifest",
+                        "Package.appxmanifest": "WinUIBlazorApp.1/Package.appxmanifest",
+                        "WinUIBlazorApp.1.csproj": "WinUIBlazorApp.1/WinUIBlazorApp.1.csproj"
+                    }
+                },
+                {
+                    "condition": "(MauiLib && RazorLib)",
+                    "rename": {
+                        "Data/WeatherForecast.cs": "WinUIBlazorApp.1.RazorLib/Data/WeatherForecast.cs",
+                        "Data/WeatherForecastService.cs": "WinUIBlazorApp.1.RazorLib/Data/WeatherForecastService.cs",
+                        "Pages/Counter.razor": "WinUIBlazorApp.1.RazorLib/Pages/Counter.razor",
+                        "Pages/Home.razor": "WinUIBlazorApp.1.RazorLib/Pages/Home.razor",
+                        "Pages/Weather.razor": "WinUIBlazorApp.1.RazorLib/Pages/Weather.razor",
+                        "Resources/Fonts/OpenSans-Regular.ttf": "WinUIBlazorApp.1.MauiLib/Resources/Fonts/OpenSans-Regular.ttf",
+                        "Resources/Fonts/OpenSans-SemiBold.ttf": "WinUIBlazorApp.1.MauiLib/Resources/Fonts/OpenSans-SemiBold.ttf",
+                        "Resources/Images/dotnet_bot.svg": "WinUIBlazorApp.1.MauiLib/Resources/Images/dotnet_bot.svg",
+                        "Resources/Raw/AboutAssets.txt": "WinUIBlazorApp.1.MauiLib/Resources/Raw/AboutAssets.txt",
+                        "Resources/appicon.svg": "WinUIBlazorApp.1.MauiLib/Resources/appicon.svg",
+                        "Resources/appiconfg.svg": "WinUIBlazorApp.1.MauiLib/Resources/appiconfg.svg",
+                        "Shared/MainLayout.razor": "WinUIBlazorApp.1.RazorLib/Shared/MainLayout.razor",
+                        "Shared/MainLayout.razor.css": "WinUIBlazorApp.1.RazorLib/Shared/MainLayout.razor.css",
+                        "Shared/NavMenu.razor": "WinUIBlazorApp.1.RazorLib/Shared/NavMenu.razor",
+                        "Shared/NavMenu.razor.css": "WinUIBlazorApp.1.RazorLib/Shared/NavMenu.razor.css",
+                        "Shared/SurveyPrompt.razor": "WinUIBlazorApp.1.RazorLib/Shared/SurveyPrompt.razor",
+                        "Main.razor": "WinUIBlazorApp.1.MauiLib/Main.razor",
+                        "MauiProgram.cs": "WinUIBlazorApp.1.MauiLib/MauiProgram.cs"
+                    },
+                    "exclude": [
+                        "Views/MauiPage.cs",
+                        "MyApp.cs"
+                    ]
+                },
+                {
+                    "condition": "(MauiLib && !RazorLib)",
+                    "rename": {
+                        "Data/WeatherForecast.cs": "WinUIBlazorApp.1.MauiLib/Data/WeatherForecast.cs",
+                        "Data/WeatherForecastService.cs": "WinUIBlazorApp.1.MauiLib/Data/WeatherForecastService.cs",
+                        "Pages/Counter.razor": "WinUIBlazorApp.1.MauiLib/Pages/Counter.razor",
+                        "Pages/Home.razor": "WinUIBlazorApp.1.MauiLib/Pages/Home.razor",
+                        "Pages/Weather.razor": "WinUIBlazorApp.1.MauiLib/Pages/Weather.razor",
+                        "Resources/Fonts/OpenSans-Regular.ttf": "WinUIBlazorApp.1.MauiLib/Resources/Fonts/OpenSans-Regular.ttf",
+                        "Resources/Fonts/OpenSans-SemiBold.ttf": "WinUIBlazorApp.1.MauiLib/Resources/Fonts/OpenSans-SemiBold.ttf",
+                        "Resources/Images/dotnet_bot.svg": "WinUIBlazorApp.1.MauiLib/Resources/Images/dotnet_bot.svg",
+                        "Resources/Raw/AboutAssets.txt": "WinUIBlazorApp.1.MauiLib/Resources/Raw/AboutAssets.txt",
+                        "Resources/appicon.svg": "WinUIBlazorApp.1.MauiLib/Resources/appicon.svg",
+                        "Resources/appiconfg.svg": "WinUIBlazorApp.1.MauiLib/Resources/appiconfg.svg",
+                        "Shared/MainLayout.razor": "WinUIBlazorApp.1.MauiLib/Shared/MainLayout.razor",
+                        "Shared/MainLayout.razor.css": "WinUIBlazorApp.1.MauiLib/Shared/MainLayout.razor.css",
+                        "Shared/NavMenu.razor": "WinUIBlazorApp.1.MauiLib/Shared/NavMenu.razor",
+                        "Shared/NavMenu.razor.css": "WinUIBlazorApp.1.MauiLib/Shared/NavMenu.razor.css",
+                        "Shared/SurveyPrompt.razor": "WinUIBlazorApp.1.MauiLib/Shared/SurveyPrompt.razor",
+                        "Main.razor": "WinUIBlazorApp.1.MauiLib/Main.razor",
+                        "MauiProgram.cs": "WinUIBlazorApp.1.MauiLib/MauiProgram.cs"
+                    },
+                    "exclude": [
+                        "Views/MauiPage.cs",
+                        "MyApp.cs"
+                    ]
+                },
+                {
+                    "condition": "(!MauiLib && RazorLib)",
+                    "rename": {
+                        "Data/WeatherForecast.cs": "WinUIBlazorApp.1.RazorLib/Data/WeatherForecast.cs",
+                        "Data/WeatherForecastService.cs": "WinUIBlazorApp.1.RazorLib/Data/WeatherForecastService.cs",
+                        "Pages/Counter.razor": "WinUIBlazorApp.1.RazorLib/Pages/Counter.razor",
+                        "Pages/Home.razor": "WinUIBlazorApp.1.RazorLib/Pages/Home.razor",
+                        "Pages/Weather.razor": "WinUIBlazorApp.1.RazorLib/Pages/Weather.razor",
+                        "Resources/Fonts/OpenSans-Regular.ttf": "WinUIBlazorApp.1/Resources/Fonts/OpenSans-Regular.ttf",
+                        "Resources/Fonts/OpenSans-SemiBold.ttf": "WinUIBlazorApp.1/Resources/Fonts/OpenSans-SemiBold.ttf",
+                        "Resources/Images/dotnet_bot.svg": "WinUIBlazorApp.1/Resources/Images/dotnet_bot.svg",
+                        "Resources/Raw/AboutAssets.txt": "WinUIBlazorApp.1/Resources/Raw/AboutAssets.txt",
+                        "Resources/appicon.svg": "WinUIBlazorApp.1/Resources/appicon.svg",
+                        "Resources/appiconfg.svg": "WinUIBlazorApp.1/Resources/appiconfg.svg",
+                        "Shared/MainLayout.razor": "WinUIBlazorApp.1.RazorLib/Shared/MainLayout.razor",
+                        "Shared/MainLayout.razor.css": "WinUIBlazorApp.1.RazorLib/Shared/MainLayout.razor.css",
+                        "Shared/NavMenu.razor": "WinUIBlazorApp.1.RazorLib/Shared/NavMenu.razor",
+                        "Shared/NavMenu.razor.css": "WinUIBlazorApp.1.RazorLib/Shared/NavMenu.razor.css",
+                        "Shared/SurveyPrompt.razor": "WinUIBlazorApp.1.RazorLib/Shared/SurveyPrompt.razor",
+                        "Views/MauiPage.cs": "WinUIBlazorApp.1/Views/MauiPage.cs",
+                        "Main.razor": "WinUIBlazorApp.1/Main.razor",
+                        "MauiProgram.cs": "WinUIBlazorApp.1/MauiProgram.cs",
+                        "MyApp.cs": "WinUIBlazorApp.1/MyApp.cs"
+                    }
                 }
             ]
         }

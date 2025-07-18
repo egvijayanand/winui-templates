@@ -19,6 +19,22 @@
             "defaultValue": "false"
         },
         {
+            "id": "maui-class-library",
+            "name": {
+                "text": "Abstract the Shared components as a separate .NET MAUI Class _Library (MCL)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "razor-class-library",
+            "name": {
+                "text": "Abstract the Razor components as a separate _Razor Class Library (RCL)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "use-mvvm",
             "name": {
                 "text": "Use _MVVM."

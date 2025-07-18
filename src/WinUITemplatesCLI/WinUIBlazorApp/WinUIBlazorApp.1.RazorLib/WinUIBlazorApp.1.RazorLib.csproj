@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>DOTNET_TFM</TargetFramework>
+
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>WinUIBlazorApp._1</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+        <PackageReference Include="Microsoft.Maui.Essentials" />
+        <!--#else-->
+        <!--#if (Net10)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.*-*" />
+        <!--#elif (Net8)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
+        <!--#else-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+        <!--#endif-->
+    </ItemGroup>
+
+</Project>

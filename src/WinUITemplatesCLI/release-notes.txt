@@ -1,7 +1,29 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 4.1.0:
+What's new in ver. 4.2.0:
 -------------------------
+Templates updated to support .NET 10 Preview 6.
+
+Introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
+
+-mcl | --maui-class-library - Default value is false
+
+.NET MAUI XAML can be included within this .NET MAUI-specific class library.
+
+-rcl | --razor-class-library - Default value is false
+
+This Razor Class Library allows code reuse with other projects such as ASP.NET Core.
+
+Note: Use both options to segregate MAUI and Razor components into distinct libraries.
+
+dotnet new winui-blazor -o MyApp -mcl
+
+dotnet new winui-blazor -o SharedApp -rcl
+
+dotnet new winui-blazor -o HybridApp -mcl -rcl
+
+v4.1.0:
+
 Templates updated to support .NET 10 Preview 4.
 
 v4.0.0:

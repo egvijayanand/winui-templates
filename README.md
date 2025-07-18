@@ -84,6 +84,29 @@ Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 * `-slnx` | `--use-slnx` - Default value is `false`
 
+Starting with [v4.2.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.2.0), introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
+
+.NET MAUI XAML can be included within this .NET MAUI-specific class library.
+
+* `-mcl` | `--maui-class-library` - Default value is `false`
+
+This Razor Class Library allows code reuse with other projects such as ASP.NET Core.
+
+* `-rcl` | `--razor-class-library` - Default value is `false`
+
+Note: Use both options to segregate MAUI and Razor components into distinct libraries.
+
+```shell
+dotnet new winui-blazor -o MyApp -mcl
+```
+
+```shell
+dotnet new winui-blazor -o SharedApp -rcl
+```
+
+```shell
+dotnet new winui-blazor -o HybridApp -mcl -rcl
+```
 *Note: These options may also be combined.*
 
 <!-- CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively. -->

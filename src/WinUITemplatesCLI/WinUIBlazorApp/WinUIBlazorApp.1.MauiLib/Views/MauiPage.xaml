@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (Mvvm)-->
+<ContentPage
+    x:Class="WinUIBlazorApp._1.Views.MauiPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
+    xmlns:vm="clr-namespace:WinUIBlazorApp._1.ViewModels"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="vm:MauiViewModel"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <vm:MauiViewModel />
+    </ContentPage.BindingContext>
+<!--#else-->
+<ContentPage
+    x:Class="WinUIBlazorApp._1.Views.MauiPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#endif-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#512BD4</Color>
+            <Color x:Key="Dark">#121212</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,40">
+            <!--#if (Mvvm)-->
+            <b:BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="{Binding StartPath}">
+            <!--#else-->
+            <b:BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="/counter">
+            <!--#endif-->
+                <b:BlazorWebView.RootComponents>
+                    <b:RootComponent
+                        ComponentType="{x:Type local:Main}"
+                        Selector="#app" />
+                </b:BlazorWebView.RootComponents>
+            </b:BlazorWebView>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource Dark},
+                                                  Light={StaticResource Primary}}">
+                <Label
+                    x:Name="lblVersion"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
