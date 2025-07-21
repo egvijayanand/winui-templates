@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 4.2.0:
+What's new in ver. 4.2.1:
 -------------------------
+Resolved an issue in the MVVM + RCL scenario where the artifacts in the ViewModels folder had not been moved to their proper location.
+
+v4.2.0:
+
 Templates updated to support .NET 10 Preview 6.
 
 Introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.

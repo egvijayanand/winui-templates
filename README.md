@@ -78,11 +78,11 @@ Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
 
+* `-slnx` | `--use-slnx` - Default value is `false`
+
 *This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
 
 Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.0.0), added another option (`net10.0`) to the `framework` parameter to support .NET 10 Previews and revamped the WinUI Blazor project template.
-
-* `-slnx` | `--use-slnx` - Default value is `false`
 
 Starting with [v4.2.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.2.0), introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
 
