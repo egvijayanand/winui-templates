@@ -242,6 +242,13 @@
                     }
                 },
                 {
+                    "condition": "(Mvvm && !MauiLib && RazorLib)",
+                    "rename": {
+                        "ViewModels/BaseViewModel.cs": "WinUIBlazorApp.1/ViewModels/BaseViewModel.cs",
+                        "ViewModels/MauiViewModel.cs": "WinUIBlazorApp.1/ViewModels/MauiViewModel.cs"
+                    }
+                },
+                {
                     "condition": "(!Mvvm)",
                     "exclude": [
                         "**/ViewModels/*"
