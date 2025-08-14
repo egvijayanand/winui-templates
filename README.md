@@ -86,6 +86,8 @@ Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 Starting with [v4.2.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.2.0), introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
 
+Starting with [v4.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.3.0), introduced an option to use Nightly builds with WinUI Blazor projects for .NET MAUI components, featuring automatic configuration of package feeds.
+
 .NET MAUI XAML can be included within this .NET MAUI-specific class library.
 
 * `-mcl` | `--maui-class-library` - Default value is `false`
@@ -106,6 +108,10 @@ dotnet new winui-blazor -o SharedApp -rcl
 
 ```shell
 dotnet new winui-blazor -o HybridApp -mcl -rcl
+```
+
+```shell
+dotnet new winui-blazor -o NightlyApp -ni
 ```
 *Note: These options may also be combined.*
 

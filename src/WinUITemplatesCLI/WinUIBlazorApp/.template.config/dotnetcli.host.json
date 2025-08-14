@@ -7,6 +7,9 @@
         "application-id": {
             "shortName": "ap"
         },
+        "Nightly": {
+            "longName": "nightly"
+        },
         "Unpackaged": {
             "longName": "unpackaged"
         },

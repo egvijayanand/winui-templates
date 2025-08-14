@@ -65,6 +65,13 @@
             "description": "Option to configure NuGet Central Package Management (CPM).",
             "displayName": "Use _NuGet Central Package Management (CPM)"
         },
+        "Nightly": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use Nightly (CI) build.",
+            "displayName": "Option to use Ni_ghtly (CI) build"
+        },
         "application-id": {
             "type": "parameter",
             "description": "Overrides the App Identifier of the project",
@@ -391,6 +398,18 @@
                         "MauiProgram.cs": "WinUIBlazorApp.1/MauiProgram.cs",
                         "MyApp.cs": "WinUIBlazorApp.1/MyApp.cs"
                     }
+                },
+                {
+                    "condition": "(Nightly)",
+                    "rename": {
+                        "NuGet.xml" : "NuGet.config"
+                    }
+                },
+                {
+                    "condition": "(!Nightly)",
+                    "exclude": [
+                        "NuGet.xml"
+                    ]
                 }
             ]
         }
