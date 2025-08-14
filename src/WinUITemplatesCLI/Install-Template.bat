@@ -32,9 +32,15 @@ templates analyze -p .\bin\%config%\%packageName%.%packageVersion%.nupkg
 echo.
 if %errorlevel% == 0 (call Info "Package validated.") else (call Error "Package validation failed." & goto end)
 
-:: Installing the Package
+echo.
+call Info "Housekeeping ..."
 
 echo.
+if exist %LocalAppData%\TemplateReport\Extracted\%packageName%.%packageVersion%.nupkg\ rmdir /s /q %LocalAppData%\TemplateReport\Extracted\%packageName%.%packageVersion%.nupkg\
+
+:: Installing the Package
+
+if not %errorlevel% == 0 echo.
 call Info "Installing the %packageName% template ver. %packageVersion% ..."
 
 dotnet new install .\bin\%config%\%packageName%.%packageVersion%.nupkg

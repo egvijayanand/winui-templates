@@ -7,6 +7,7 @@
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>

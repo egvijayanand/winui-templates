@@ -3,42 +3,74 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
-        <MauiVersion>10.0.0-preview.6.25359.8</MauiVersion>
+        <!--#if (Nightly)-->
+        <MauiVersion>10.0.0-preview.7.25406.3</MauiVersion>
+        <!--#else-->
+        <MauiVersion>10.0.0-preview.7.25406.3</MauiVersion>
+        <!--#endif-->
         <!--#elif (Net8)-->
+        <!--#if (Nightly)-->
         <MauiVersion>8.0.100</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.90</MauiVersion>
+        <MauiVersion>8.0.100</MauiVersion>
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (Nightly)-->
+        <MauiVersion>9.0.110-ci.main.25412.14</MauiVersion>
+        <!--#else-->
+        <MauiVersion>9.0.100</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
+        <!--#if (Nightly)-->
         <MauiVersion>10.*-*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>10.*-*</MauiVersion>
+        <!--#endif-->
         <!--#elif (Net8)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>8.*-*</MauiVersion>
+        <!--#else-->
         <MauiVersion>8.*</MauiVersion>
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (Nightly)-->
+        <MauiVersion>9.*-*</MauiVersion>
         <!--#else-->
         <MauiVersion>9.*</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
         <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
-        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3351.48" />
+        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3405.78" />
         <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4654" />
         <!--#if (Net10)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.6.25358.103" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+        <!--#if (Nightly)-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.7.25380.108" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.7" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.7.25380.108" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#endif-->
+        <!--#elif (Net8)-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <!--#if (RazorLib)-->
         <!--#if (Net10)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.6.25358.103" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.18" />
+        <!--#if (Nightly)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.7.25380.108" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.7" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.7.25380.108" />
+        <!--#endif-->
+        <!--#elif (Net8)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.19" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.8" />
         <!--#endif-->
         <!--#endif-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />

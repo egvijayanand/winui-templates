@@ -11,6 +11,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "Nightly",
+            "name": {
+                "text": "Configure Ni_ghtly build."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "central-pkg-mgmt",
             "name": {
                 "text": "Use _NuGet Central Package Management (CPM)."
