@@ -79,7 +79,7 @@
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <!--#else-->
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="[1.7.*,1.8)" />
         <PackageReference Include="Microsoft.Web.WebView2" Version="1.*" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.*" />
         <!--#if (Net10)-->
