@@ -1,7 +1,17 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 4.3.0:
+What's new in ver. 4.4.0:
 -------------------------
+Templates updated to support WindowsAppSDK v1.8, .NET MAUI 10 RC1, and .NET MAUI 9 SR11.
+
+In a WinUI Blazor project targeting .NET 10, the XAML files in the MAUI Class Library (with the -mcl option) will utilize the Global namespace feature.
+
+dotnet new winui-blazor -o HybridApp -mcl -f net10.0
+
+Note: To ensure compatibility, the WinUI Blazor project will reference WindowsAppSDK v1.7.
+
+v4.3.0:
+
 Templates updated to support .NET 10 Preview 7.
 
 Introduced an option to use Nightly builds with WinUI Blazor projects for .NET MAUI components, featuring automatic configuration of package feeds.

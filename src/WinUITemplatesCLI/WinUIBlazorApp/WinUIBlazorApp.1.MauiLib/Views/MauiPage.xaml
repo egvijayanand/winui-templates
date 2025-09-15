@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="WinUIBlazorApp._1.Views.MauiPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="MauiViewModel"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <MauiViewModel />
+    </ContentPage.BindingContext>
+<!--#else-->
 <ContentPage
     x:Class="WinUIBlazorApp._1.Views.MauiPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -15,6 +29,16 @@
     <ContentPage.BindingContext>
         <vm:MauiViewModel />
     </ContentPage.BindingContext>
+<!--#endif-->
+<!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="WinUIBlazorApp._1.Views.MauiPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
     x:Class="WinUIBlazorApp._1.Views.MauiPage"
@@ -26,6 +50,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 <!--#endif-->
+<!--#endif-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#512BD4</Color>
@@ -34,6 +59,23 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
+            <!--#if (Net10OrLater)-->
+            <!--#if (Mvvm)-->
+            <BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="{Binding StartPath}">
+            <!--#else-->
+            <BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="/counter">
+            <!--#endif-->
+                <BlazorWebView.RootComponents>
+                    <RootComponent
+                        ComponentType="{x:Type Main}"
+                        Selector="#app" />
+                </BlazorWebView.RootComponents>
+            </BlazorWebView>
+            <!--#else-->
             <!--#if (Mvvm)-->
             <b:BlazorWebView
                 HostPage="wwwroot/index.html"
@@ -49,6 +91,7 @@
                         Selector="#app" />
                 </b:BlazorWebView.RootComponents>
             </b:BlazorWebView>
+            <!--#endif-->
             <Grid
                 Grid.Row="1"
                 BackgroundColor="{AppThemeBinding Dark={StaticResource Dark},

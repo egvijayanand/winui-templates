@@ -110,9 +110,12 @@ dotnet new winui-blazor -o SharedApp -rcl
 dotnet new winui-blazor -o HybridApp -mcl -rcl
 ```
 
+Nightly Builds support:
+
 ```shell
 dotnet new winui-blazor -o NightlyApp -ni
 ```
+
 *Note: These options may also be combined.*
 
 <!-- CLI item template for `WinUI 3` Page, UserControl, and Window and is named as `winui-page`, `winui-usercontrol`, and `winui-window` respectively. -->
