@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="WinUITemplates.7e7539f2-369c-417c-a7ab-9f175208bf0c" Version="4.4.0.0" Language="en-US" Publisher="Vijay Anand E G" />
+        <DisplayName>WinUI 3 Windows Desktop Templates</DisplayName>
+        <Description xml:space="preserve">WinUI 3 Windows desktop project and item templates.</Description>
+        <MoreInfo>https://egvijayanand.in/</MoreInfo>
+        <License>license.txt</License>
+        <GettingStartedGuide>https://egvijayanand.in/2023/03/29/dotnet-maui-blazor-hybrid-winui-3/</GettingStartedGuide>
+        <ReleaseNotes>release-notes.txt</ReleaseNotes>
+        <Icon>Resources\Icon.png</Icon>
+        <PreviewImage>Resources\Icon.png</PreviewImage>
+        <Tags>Blazor, Desktop, WinUI, Windows, Template, BlazorWebView, Hybrid, Razor, Web, GA, .NET MAUI, Client, Modernization, .NET 8, .NET 9, .NET 10, Preview, ARM64, SLNX, WindowsAppSDK, UWP, Win32, WinUI 3, Native Embedding, Library, VS2026, VS2022, Insiders</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Version="[17.6, 19.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[17.6, 19.0)" Id="Microsoft.VisualStudio.Pro">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[17.6, 19.0)" Id="Microsoft.VisualStudio.Enterprise">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[17.6, 19.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>arm64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[17.6, 19.0)" Id="Microsoft.VisualStudio.Pro">
+            <ProductArchitecture>arm64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[17.6, 19.0)" Id="Microsoft.VisualStudio.Enterprise">
+            <ProductArchitecture>arm64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="NuGetTemplates.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.6, 19.0)" d:TargetPath="ItemTemplates\WinUIPage.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.6, 19.0)" d:TargetPath="ItemTemplates\WinUIUserControl.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.6, 19.0)" d:TargetPath="ItemTemplates\WinUIWindow.zip" />
+    </Assets>
+</PackageManifest>

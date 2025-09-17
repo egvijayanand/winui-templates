@@ -1,0 +1,25 @@
+Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
+
+What's new in ver. 4.4.0.0:
+---------------------------
+The initial release of WinUI 3 Templates is now available as a VS Extension (VSIX) with support for Visual Studio 2022 and 2026 Insiders.
+
+Comes with a set of templates for creating WinUI 3 related projects, including:
+
+- WinUI 3 App
+- WinUI 3 Hybrid App using .NET MAUI Native Embedding feature
+- WinUI 3 Library
+
+Item templates are also included for:
+
+- WinUI 3 Page
+- WinUI 3 User Control
+- WinUI 3 Window
+
+Note: The version # is aligned with its NuGet CLI Templates Pack counterpart.
+
+https://www.nuget.org/packages/VijayAnand.WinUITemplates
+
+Which can be installed using the command below:
+
+dotnet new install VijayAnand.WinUITemplates
