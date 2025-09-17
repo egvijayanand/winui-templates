@@ -1,19 +1,19 @@
-### CLI Project and Item Templates for developing WinUI 3 based Windows Desktop Apps
+## Project and Item Templates for WinUI 3 based Windows Desktop Apps
 
 Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor.
 
-#### Package Status:
+### Package Status:
 
-|Channel|Version|
-|:---:|:---:|
-|Stable|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI CLI Templates (Stable)")|
+|Channel|NuGet|VS Marketplace|
+|:---:|:---:|:---:|
+|Stable|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/ "WinUI 3 CLI Templates (Stable)")|[![WinUI 3 Windows Desktop Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.winui-templates?icon=visualstudio&foo=bar)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates)|
 <!--
-|Preview|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/absoluteLatest "WinUI CLI Templates (Preview)")|
+|Preview|[![VijayAnand.WinUITemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.WinUITemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.WinUITemplates/absoluteLatest "WinUI 3 CLI Templates (Preview)")|[![WinUI 3 Windows Desktop Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.winui-templates?icon=visualstudio&foo=bar)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates)|
 -->
 
 <!-- CLI project template for developing `WinUI 3` App and Class Library and is named as `winui` and `winuilib` respectively. -->
 
-#### Install Package:
+### .NET CLI Template
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -41,7 +41,21 @@ dotnet new update --check-only
 dotnet new update
 ```
 
-#### Templates Included
+### For Visual Studio users (both VS2022 and VS2026 Insiders release):
+
+To provide an integrated experience, a VS extension has been developed to host these templates.
+
+The VS extension is now supported on both **x64 and ARM64** installations of Visual Studio 2022 and 2026 Insiders release. Happy coding!
+
+*Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.*
+
+**The v4.4.0.0 extension is now compatible with the Visual Studio 2026 Insiders release v18.0.0**
+
+Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates "WinUI 3 Windows Desktop Templates") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
+<!--
+![Manage Extensions - Visual Studio](images/vs-manage-extensions.png)
+-->
+### Templates Included
 
 |Item|Template Name|Type|
 |:---:|:---:|:---:|
@@ -86,8 +100,6 @@ Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 Starting with [v4.2.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.2.0), introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
 
-Starting with [v4.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.3.0), introduced an option to use Nightly builds with WinUI Blazor projects for .NET MAUI components, featuring automatic configuration of package feeds.
-
 .NET MAUI XAML can be included within this .NET MAUI-specific class library.
 
 * `-mcl` | `--maui-class-library` - Default value is `false`
@@ -110,6 +122,8 @@ dotnet new winui-blazor -o SharedApp -rcl
 dotnet new winui-blazor -o HybridApp -mcl -rcl
 ```
 
+Starting with [v4.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.3.0), introduced an option to use Nightly builds with WinUI Blazor projects for .NET MAUI components, featuring automatic configuration of package feeds.
+
 Nightly Builds support:
 
 ```shell
@@ -122,7 +136,7 @@ dotnet new winui-blazor -o NightlyApp -ni
 
 Use the below .NET CLI command to create the projects out these template:
 
-#### WinUI 3 App:
+### WinUI 3 App:
 
 ```shell
 dotnet new winui -n MyApp
@@ -158,7 +172,7 @@ Option to create the SLNX solution file:
 dotnet new winui -n MyApp -slnx
 ```
 
-#### Blazor Hybrid App:
+### Blazor Hybrid App (using .NET MAUI Embedding feature):
 
 ```shell
 dotnet new winui-blazor -n HybridApp
@@ -194,7 +208,7 @@ Option to create the SLNX solution file:
 dotnet new winui-blazor -n HybridApp -slnx
 ```
 
-#### Library:
+### Library:
 
 ```shell
 dotnet new winuilib -n MyLib
@@ -225,7 +239,7 @@ Option to create the SLNX solution file:
 dotnet new winuilib -n MyLib -slnx
 ```
 
-#### Item Templates:
+### Item Templates:
 
 Use the below .NET CLI command to create the items out these template:
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>WinUIPage.xaml</DefaultName>
+		<Name>WinUI 3 Page</Name>
+		<Description>A WinUI 3 Page.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>WinUI</ProjectSubType>
+		<SortOrder>100</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+		<ProjectItem TargetFileName="$fileinputname$Page.xaml" ReplaceParameters="true">WinUIPage.xaml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$Page.xaml.cs" ReplaceParameters="true">WinUIPage.xaml.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
