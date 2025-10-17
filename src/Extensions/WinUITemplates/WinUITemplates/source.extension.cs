@@ -11,7 +11,7 @@ namespace VijayAnand.WinUITemplates
         public const string Name = "WinUI 3 Windows Desktop Templates";
         public const string Description = @"WinUI 3 Windows desktop project and item templates.";
         public const string Language = "en-US";
-        public const string Version = "4.4.0.0";
+        public const string Version = "4.5.0.0";
         public const string Author = "Vijay Anand E G";
         public const string Tags = "Blazor, Desktop, WinUI, Windows, Template, BlazorWebView, Hybrid, Razor, Web, GA, .NET MAUI, Client, Modernization, .NET 8, .NET 9, .NET 10, Preview, ARM64, SLNX, WindowsAppSDK, UWP, Win32, WinUI 3, Native Embedding, Library, VS2026, VS2022, Insiders";
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WinUITemplates.7e7539f2-369c-417c-a7ab-9f175208bf0c" Version="4.4.0.0" Language="en-US" Publisher="Vijay Anand E G" />
+        <Identity Id="WinUITemplates.7e7539f2-369c-417c-a7ab-9f175208bf0c" Version="4.5.0.0" Language="en-US" Publisher="Vijay Anand E G" />
         <DisplayName>WinUI 3 Windows Desktop Templates</DisplayName>
         <Description xml:space="preserve">WinUI 3 Windows desktop project and item templates.</Description>
         <MoreInfo>https://egvijayanand.in/</MoreInfo>
