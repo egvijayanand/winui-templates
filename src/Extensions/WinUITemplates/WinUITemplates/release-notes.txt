@@ -1,7 +1,27 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.4.0.0:
+What's new in ver. 4.5.0.0:
 ---------------------------
+1. Templates updated to support .NET 10 RC2, and .NET MAUI 9 SR12.
+
+2. Updates related to the WinUI Blazor project template:
+
+* The MauiVersion can now be shown on any page, thanks to its refactoring into a control template.
+
+Note: The following changes are relevant only when using the MAUI class library option, as .NET MAUI XAML is not compatible within the WinUI project.
+
+It now includes support for two optional boolean inputs, shown as checkboxes in the UI, as outlined below.
+
+* Global namespace is the default option for .NET MAUI 10.
+
+But for smooth migration and to test backward compatibility, it can be opted out by unchecking the UI control.
+
+* Support for implicit namespace option in project templates when targeting .NET MAUI 10.
+
+Note: Both of the inputs are ignored in earlier versions (.NET 8/9).
+
+v4.4.0.0:
+
 The initial release of WinUI 3 Templates is now available as a VS Extension (VSIX) with support for Visual Studio 2022 and 2026 Insiders.
 
 Comes with a set of templates for creating WinUI 3 related projects, including:
