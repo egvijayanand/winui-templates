@@ -2,7 +2,10 @@
 {
     public partial class MauiViewModel() : BaseViewModel("Home")
     {
-#if (MauiLib || Net8)
+#if Net10OrLater
+        [ObservableProperty]
+        public partial string StartPath { get; set; } = "/counter";
+#elif (MauiLib || Net8)
         [ObservableProperty]
         private string _startPath = "/counter";
 #else

@@ -9,6 +9,11 @@
         private static MauiContext InitializeMauiContext()
         {
             var mauiApp = MauiProgram.CreateMauiApp();
+#if Net8
+            // This call is needed to ensure that the Application instance is 
+            // resolved for accessing global resources.
+            var _ = mauiApp.Services.GetRequiredService<IApplication>();
+#endif
             return new MauiContext(mauiApp.Services);
         }
     }

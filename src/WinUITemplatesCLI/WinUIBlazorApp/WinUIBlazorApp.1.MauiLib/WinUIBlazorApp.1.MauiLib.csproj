@@ -11,7 +11,11 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <!--#if (Net10OrLater)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
         <LangVersion>latest</LangVersion>
+        <!--#endif-->
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinUIBlazorApp._1</RootNamespace>
     </PropertyGroup>
@@ -22,7 +26,7 @@
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" IncludeAssets="compile;runtime" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <PackageReference Include="Microsoft.Maui.Controls" />
         <!--#else-->
         <!--#if (AddMvvmToolkit)-->
@@ -30,11 +34,11 @@
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" IncludeAssets="compile;runtime" />
         <!--#if (Net10)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#elif (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#endif-->

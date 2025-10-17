@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="WinUIBlazorApp._1.Views.MauiPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:DataType="MauiViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+    <ContentPage.BindingContext>
+        <MauiViewModel />
+    </ContentPage.BindingContext>
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="WinUIBlazorApp._1.Views.MauiPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -9,6 +19,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="MauiViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
     <ContentPage.BindingContext>
         <MauiViewModel />
@@ -25,19 +36,26 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="vm:MauiViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
     <ContentPage.BindingContext>
         <vm:MauiViewModel />
     </ContentPage.BindingContext>
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="WinUIBlazorApp._1.Views.MauiPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="WinUIBlazorApp._1.Views.MauiPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -48,60 +66,43 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:local="clr-namespace:WinUIBlazorApp._1"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#endif-->
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Primary">#512BD4</Color>
-            <Color x:Key="Dark">#121212</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <!--#if (Net10OrLater)-->
-            <!--#if (Mvvm)-->
-            <BlazorWebView
-                HostPage="wwwroot/index.html"
-                StartPath="{Binding StartPath}">
-            <!--#else-->
-            <BlazorWebView
-                HostPage="wwwroot/index.html"
-                StartPath="/counter">
-            <!--#endif-->
-                <BlazorWebView.RootComponents>
-                    <RootComponent
-                        ComponentType="{x:Type Main}"
-                        Selector="#app" />
-                </BlazorWebView.RootComponents>
-            </BlazorWebView>
-            <!--#else-->
-            <!--#if (Mvvm)-->
-            <b:BlazorWebView
-                HostPage="wwwroot/index.html"
-                StartPath="{Binding StartPath}">
-            <!--#else-->
-            <b:BlazorWebView
-                HostPage="wwwroot/index.html"
-                StartPath="/counter">
-            <!--#endif-->
-                <b:BlazorWebView.RootComponents>
-                    <b:RootComponent
-                        ComponentType="{x:Type local:Main}"
-                        Selector="#app" />
-                </b:BlazorWebView.RootComponents>
-            </b:BlazorWebView>
-            <!--#endif-->
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource Dark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="lblVersion"
-                    HorizontalOptions="Center"
-                    TextColor="White"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+        <!--#if (GlobalNamespace || ImplicitNamespace)-->
+        <!--#if (Mvvm)-->
+        <BlazorWebView
+            HostPage="wwwroot/index.html"
+            StartPath="{Binding StartPath}">
+        <!--#else-->
+        <BlazorWebView
+            HostPage="wwwroot/index.html"
+            StartPath="/counter">
+        <!--#endif-->
+            <BlazorWebView.RootComponents>
+                <RootComponent
+                    ComponentType="{x:Type Main}"
+                    Selector="#app" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+        <!--#else-->
+        <!--#if (Mvvm)-->
+        <b:BlazorWebView
+            HostPage="wwwroot/index.html"
+            StartPath="{Binding StartPath}">
+        <!--#else-->
+        <b:BlazorWebView
+            HostPage="wwwroot/index.html"
+            StartPath="/counter">
+        <!--#endif-->
+            <b:BlazorWebView.RootComponents>
+                <b:RootComponent
+                    ComponentType="{x:Type local:Main}"
+                    Selector="#app" />
+            </b:BlazorWebView.RootComponents>
+        </b:BlazorWebView>
+        <!--#endif-->
     </ContentPage.Content>
 </ContentPage>
