@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (ImplicitNamespace)-->
+<ContentView
+    x:Class="WinUIBlazorApp._1.Views.VersionTemplate"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#elif (GlobalNamespace)-->
+<ContentView
+    x:Class="WinUIBlazorApp._1.Views.VersionTemplate"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#else-->
+<ContentView
+    x:Class="WinUIBlazorApp._1.Views.VersionTemplate"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
+    mc:Ignorable="d">
+<!--#endif-->
+    <Grid RowDefinitions="*,40">
+        <ContentPresenter />
+        <Grid
+            Grid.Row="1"
+            BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                              Light={StaticResource Primary}}">
+            <!--#if (GlobalNamespace || ImplicitNamespace)-->
+            <Label
+                HorizontalOptions="Center"
+                Text="{x:Static MyApp.MauiVersion}"
+                TextColor="{StaticResource White}"
+                VerticalOptions="Center" />
+            <!--#else-->
+            <Label
+                HorizontalOptions="Center"
+                Text="{x:Static local:MyApp.MauiVersion}"
+                TextColor="{StaticResource White}"
+                VerticalOptions="Center" />
+            <!--#endif-->
+        </Grid>
+    </Grid>
+</ContentView>

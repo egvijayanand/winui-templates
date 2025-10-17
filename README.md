@@ -52,9 +52,9 @@ The VS extension is now supported on both **x64 and ARM64** installations of Vis
 **The v4.4.0.0 extension is now compatible with the Visual Studio 2026 Insiders release v18.0.0**
 
 Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates "WinUI 3 Windows Desktop Templates") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
-<!--
-![Manage Extensions - Visual Studio](images/vs-manage-extensions.png)
--->
+
+![Manage Extensions - Visual Studio](images/visual-studio-manage-extensions.png)
+
 ### Templates Included
 
 |Item|Template Name|Type|

@@ -1,7 +1,38 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 4.4.0:
+This template package is now hosted on VS Marketplace as well.
+
+Supported on both Visual Studio 2022 and 2026 Insiders.
+
+https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates
+
+What's new in ver. 4.5.0:
 -------------------------
+1. Templates updated to support .NET 10 RC2, and .NET MAUI 9 SR12.
+
+2. Updates related to the WinUI Blazor project template using .NET 10:
+
+Note: These changes are relevant only when using the MAUI class library option, as .NET MAUI XAML is not compatible within the WinUI project.
+
+It now include support for two optional parameters, as outlined below.
+
+-gn | --global-namespace - Default value is true
+-in | --implicit-namespace - Default value is false
+
+The parameters are ignored in earlier versions (.NET 8/9).
+
+* Global namespace is the default option for .NET MAUI 10, but for smooth migration and to test backward compatibility, it can be opted out.
+
+dotnet new winui-blazor -o HybridApp -mcl -gn:false -f net10.0
+
+* Support for implicit namespace option in project templates when targeting .NET MAUI 10.
+
+dotnet new winui-blazor -o HybridApp -mcl -in -f net10.0
+
+* The MauiVersion can now be shown on any page, thanks to its refactoring into a control template.
+
+v4.4.0:
+
 Templates updated to support WindowsAppSDK v1.8, .NET MAUI 10 RC1, and .NET MAUI 9 SR11.
 
 In a WinUI Blazor project targeting .NET 10, the XAML files in the MAUI Class Library (with the -mcl option) will utilize the Global namespace feature.

@@ -11,10 +11,12 @@ namespace WinUIBlazorApp._1.Views
         {
             this.InitializeComponent();
 
+            // This step is essential to ensure access to global resources before initializing any MAUI controls.
+            var mauiContext = MauiContext;
             // Platform-neutral - Windowless API
-            Content = new MauiPage().ToPlatform(MauiContext);
+            Content = new MauiPage().ToPlatform(mauiContext);
             // Updated Window inclusive API
-            //Content = new MauiPage().ToPlatformEmbedded(MauiContext);
+            //Content = new MauiPage().ToPlatformEmbedded(mauiContext);
         }
     }
 }

@@ -2,7 +2,10 @@
 {
     public partial class BaseViewModel(string title = "") : ObservableObject
     {
-#if (MauiLib || Net8)
+#if Net10OrLater
+        [ObservableProperty]
+        public partial string Title { get; set; } = title;
+#elif (MauiLib || Net8)
         [ObservableProperty]
         private string _title = title;
 #else

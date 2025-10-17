@@ -72,6 +72,20 @@
             "description": "Option to use Nightly (CI) build.",
             "displayName": "Option to use Ni_ghtly (CI) build"
         },
+        "global-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Option to use .NET MAUI 10 Global Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10 Global Namespace feature."
+        },
+        "implicit-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI 10 Implicit Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10 Implicit Namespace feature."
+        },
         "application-id": {
             "type": "parameter",
             "description": "Overrides the App Identifier of the project",
@@ -174,6 +188,18 @@
         "Net9OrLater": {
             "type": "computed",
             "value": "(Net9 || Net10)"
+        },
+        "Net10OrLater": {
+            "type": "computed",
+            "value": "(Net10)"
+        },
+        "GlobalNamespace": {
+            "type": "computed",
+            "value": "(Net10OrLater && global-namespace)"
+        },
+        "ImplicitNamespace": {
+            "type": "computed",
+            "value": "(Net10OrLater && implicit-namespace)"
         },
         "AddMvvmToolkit": {
             "type": "computed",
@@ -344,6 +370,7 @@
                     },
                     "exclude": [
                         "Views/MauiPage.cs",
+                        "Views/VersionTemplate.cs",
                         "MyApp.cs"
                     ]
                 },
@@ -371,6 +398,7 @@
                     },
                     "exclude": [
                         "Views/MauiPage.cs",
+                        "Views/VersionTemplate.cs",
                         "MyApp.cs"
                     ]
                 },
@@ -394,6 +422,7 @@
                         "Shared/NavMenu.razor.css": "WinUIBlazorApp.1.RazorLib/Shared/NavMenu.razor.css",
                         "Shared/SurveyPrompt.razor": "WinUIBlazorApp.1.RazorLib/Shared/SurveyPrompt.razor",
                         "Views/MauiPage.cs": "WinUIBlazorApp.1/Views/MauiPage.cs",
+                        "Views/VersionTemplate.cs": "WinUIBlazorApp.1/Views/VersionTemplate.cs",
                         "Main.razor": "WinUIBlazorApp.1/Main.razor",
                         "MauiProgram.cs": "WinUIBlazorApp.1/MauiProgram.cs",
                         "MyApp.cs": "WinUIBlazorApp.1/MyApp.cs"
@@ -402,7 +431,7 @@
                 {
                     "condition": "(Nightly)",
                     "rename": {
-                        "NuGet.xml" : "NuGet.config"
+                        "NuGet.xml": "NuGet.config"
                     }
                 },
                 {
