@@ -54,7 +54,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\VijayAnand.WinUITemplates.4.5.0.nupkg" />
+    <None Include="Assets\VijayAnand.WinUITemplates.5.0.0.nupkg" />
     <Content Include="ItemTemplates\WinUIPage.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
