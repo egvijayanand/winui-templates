@@ -14,10 +14,10 @@ All the project templates takes the target framework as an input parameter, can 
 And the supported values are:
 
 * net8.0
-* net9.0 *(the default value)*
-* net10.0
+* net9.0
+* net10.0 *(the default value)*
 
-Note: The default value for the framework parameter remains as `net9.0` (the latest stable channel), which means to create a project for .NET 9 (the preview channel), an explicit value of `net10.0` is to be passed.
+Note: The default value for the `framework` parameter remains as `net10.0` (the latest stable release), which means to create a project for `.NET 8` or `.NET 9`, an explicit value of `net8.0` / `net9.0` is to be passed.
 
 Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
 
@@ -27,9 +27,7 @@ Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
 
-* `-slnx` | `--use-slnx` - Default value is `false`
-
-*This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
+* `-slnx` | `--use-slnx` - Default value is `true` (from `v5.0` onwards)
 
 Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.0.0), added another option (`net10.0`) to the `framework` parameter to support .NET 10 Previews and revamped the WinUI Blazor project template.
 
@@ -101,17 +99,20 @@ Use the below .NET CLI command to create the projects out these template:
 dotnet new winui -n MyApp
 ```
 
+.NET 9:
+
+```shell
+dotnet new winui -n MyApp -f net9.0
+```
+
+.NET 8:
+
 ```shell
 dotnet new winui -n MyApp -f net8.0
 ```
 
-.NET 10 Preview:
-
-```shell
-dotnet new winui -n MyApp -f net10.0
-```
-
 Option to use the CPM feature:
+
 ```shell
 dotnet new winui -n MyApp -cpm
 ```
@@ -122,17 +123,20 @@ dotnet new winui -n MyApp -cpm
 dotnet new winui-blazor -n HybridApp
 ```
 
+.NET 9:
+
+```shell
+dotnet new winui-blazor -n HybridApp -f net9.0
+```
+
+.NET 8:
+
 ```shell
 dotnet new winui-blazor -n HybridApp -f net8.0
 ```
 
-.NET 10 Preview:
-
-```shell
-dotnet new winui-blazor -n HybridApp -f net10.0
-```
-
 Option to use the CPM feature:
+
 ```shell
 dotnet new winui-blazor -n HybridApp -cpm
 ```
@@ -143,17 +147,20 @@ dotnet new winui-blazor -n HybridApp -cpm
 dotnet new winuilib -n MyLib
 ```
 
+.NET 9:
+
+```shell
+dotnet new winuilib -n MyLib -f net9.0
+```
+
+.NET 8:
+
 ```shell
 dotnet new winuilib -n MyLib -f net8.0
 ```
 
-.NET 10 Preview:
-
-```shell
-dotnet new winuilib -n MyLib -f net10.0
-```
-
 Option to use the CPM feature:
+
 ```shell
 dotnet new winuilib -n MyLib -cpm
 ```
@@ -179,16 +186,19 @@ Use the below .NET CLI command to create the items out these template:
 Auto suffixing of the Type name is supported for the files created with the `Page` and `Window` item templates.
 
 Page:
+
 ```shell
 dotnet new winui-page -n Order
 ```
 
-UserControl:
+User Control:
+
 ```shell
 dotnet new winui-usercontrol -n CardView
 ```
 
 Window:
+
 ```shell
 dotnet new winui-window -n Home
 ```

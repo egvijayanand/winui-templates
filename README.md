@@ -71,10 +71,10 @@ All three project templates takes the target framework as an input parameter, ca
 And the supported values are:
 
 * net8.0
-* net9.0 *(the default value)*
-* net10.0
+* net9.0
+* net10.0 *(the default value)*
 
-Note: The default value for the framework parameter remains as `net9.0` (the latest stable channel), which means to create a project for .NET 10 (the preview channel), an explicit value of `net10.0` is to be passed.
+Note: The default value for the `framework` parameter remains as `net10.0` (the latest stable release), which means to create a project for `.NET 8` or `.NET 9`, an explicit value of `net8.0` / `net9.0` is to be passed.
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package.
 
@@ -92,7 +92,7 @@ Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 
 Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
 
-* `-slnx` | `--use-slnx` - Default value is `false`
+* `-slnx` | `--use-slnx` - Default value is `true` (from `v5.0` onwards)
 
 *This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
 
@@ -142,34 +142,40 @@ Use the below .NET CLI command to create the projects out these template:
 dotnet new winui -n MyApp
 ```
 
+.NET 9:
+
+```shell
+dotnet new winui -n MyApp -f net9.0
+```
+
 .NET 8:
+
 ```shell
 dotnet new winui -n MyApp -f net8.0
 ```
 
-.NET 10 Preview:
-```shell
-dotnet new winui -n MyApp -f net10.0
-```
-
 MVVM based solution:
+
 ```shell
 dotnet new winui -n MyApp -mvvm
 ```
 
 Option to include only the MVVM NuGet package:
+
 ```shell
 dotnet new winui -n MyApp -imt
 ```
 
 Option to use the CPM feature:
+
 ```shell
 dotnet new winui -n MyApp -cpm
 ```
 
-Option to create the SLNX solution file:
+Option to create the classic SLN solution file:
+
 ```shell
-dotnet new winui -n MyApp -slnx
+dotnet new winui -n MyApp -slnx:false
 ```
 
 ### Blazor Hybrid App (using .NET MAUI Embedding feature):
@@ -178,34 +184,40 @@ dotnet new winui -n MyApp -slnx
 dotnet new winui-blazor -n HybridApp
 ```
 
+.NET 9:
+
+```shell
+dotnet new winui-blazor -n HybridApp -f net9.0
+```
+
 .NET 8:
+
 ```shell
 dotnet new winui-blazor -n HybridApp -f net8.0
 ```
 
-.NET 10 Preview:
-```shell
-dotnet new winui-blazor -n HybridApp -f net10.0
-```
-
 MVVM based solution:
+
 ```shell
 dotnet new winui-blazor -n HybridApp -mvvm
 ```
 
 Option to include only the MVVM NuGet package:
+
 ```shell
 dotnet new winui-blazor -n HybridApp -imt
 ```
 
 Option to use the CPM feature:
+
 ```shell
 dotnet new winui-blazor -n HybridApp -cpm
 ```
 
-Option to create the SLNX solution file:
+Option to create the classic SLN solution file:
+
 ```shell
-dotnet new winui-blazor -n HybridApp -slnx
+dotnet new winui-blazor -n HybridApp -slnx:false
 ```
 
 ### Library:
@@ -214,27 +226,32 @@ dotnet new winui-blazor -n HybridApp -slnx
 dotnet new winuilib -n MyLib
 ```
 
+.NET 9:
+
+```shell
+dotnet new winuilib -n MyLib -f net9.0
+```
+
 .NET 8:
+
 ```shell
 dotnet new winuilib -n MyLib -f net8.0
 ```
 
-.NET 10 Preview:
-```shell
-dotnet new winuilib -n MyLib -f net10.0
-```
-
 Option to include only the MVVM NuGet package:
+
 ```shell
 dotnet new winuilib -n MyLib -imt
 ```
 
 Option to use the CPM feature:
+
 ```shell
 dotnet new winuilib -n MyLib -cpm
 ```
 
 Option to create the SLNX solution file:
+
 ```shell
 dotnet new winuilib -n MyLib -slnx
 ```
