@@ -6,15 +6,37 @@ Supported on both Visual Studio 2022 and 2026 Insiders.
 
 https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates
 
-What's new in ver. 4.5.0:
+What's new in ver. 5.0.0:
 -------------------------
+1. Templates updated to support .NET 10 GA.
+
+2. The default Framework value is now set to net10.0 to natively support .NET 10 (LTS).
+
+dotnet new winui -o MyApp
+
+dotnet new winui-blazor -o HybridApp
+
+dotnet new winuilib -o MyLib
+
+When creating a .NET 8 or 9 project, an explicit value for the Framework parameter is required.
+
+dotnet new winui -o MyApp -f net9.0
+
+3. By default, the solution file is created in the SLNX format.
+
+To work with the classic SLN format, override the default value.
+
+dotnet new winui -o MyApp -slnx:false
+
+v4.5.0:
+
 1. Templates updated to support .NET 10 RC2, and .NET MAUI 9 SR12.
 
 2. Updates related to the WinUI Blazor project template using .NET 10:
 
 Note: These changes are relevant only when using the MAUI class library option, as .NET MAUI XAML is not compatible within the WinUI project.
 
-It now include support for two optional parameters, as outlined below.
+It now includes support for two optional parameters, as outlined below.
 
 -gn | --global-namespace - Default value is true
 -in | --implicit-namespace - Default value is false

@@ -4,6 +4,7 @@
         <TargetFramework>DOTNET_TFM</TargetFramework>
 
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WinUIBlazorApp._1</RootNamespace>
     </PropertyGroup>
@@ -17,12 +18,12 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
         <PackageReference Include="Microsoft.Maui.Essentials" />
         <!--#else-->
-        <!--#if (Net10)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.*-*" />
+        <!--#if (Net9)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*" />
         <!--#elif (Net8)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
         <!--#else-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.*" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
         <!--#endif-->
