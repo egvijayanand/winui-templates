@@ -5,10 +5,10 @@
         {
             "id": "use-slnx",
             "name": {
-                "text": "Use _XML-based solution file (slnx)."
+                "text": "Use _XML-based solution file (SLNX)."
             },
             "isVisible": true,
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         {
             "id": "central-pkg-mgmt",
@@ -40,7 +40,7 @@
                 "text": "Configure the App as _Unpackaged"
             },
             "isVisible": true,
-            "defaultValue": "false"
+            "defaultValue": "true"
         }
     ]
 }
