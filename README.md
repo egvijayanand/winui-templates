@@ -41,15 +41,15 @@ dotnet new update --check-only
 dotnet new update
 ```
 
-### For Visual Studio users (both VS2022 and VS2026 Insiders release):
+### For Visual Studio users (both VS2022 and VS2026 release):
 
 To provide an integrated experience, a VS extension has been developed to host these templates.
 
-The VS extension is now supported on both **x64 and ARM64** installations of Visual Studio 2022 and 2026 Insiders release. Happy coding!
+The VS extension is now supported on both **x64 and ARM64** installations of Visual Studio 2022 and 2026 release. Happy coding!
 
 *Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.*
 
-**The v4.4.0.0 extension is now compatible with the Visual Studio 2026 Insiders release v18.0.0**
+**The v4.4 or higher extension is now compatible with the Visual Studio 2026 release v18.0.0**
 
 Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.winui-templates "WinUI 3 Windows Desktop Templates") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
@@ -93,8 +93,6 @@ Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/
 Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
 
 * `-slnx` | `--use-slnx` - Default value is `true` (from `v5.0` onwards)
-
-*This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
 
 Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.0.0), added another option (`net10.0`) to the `framework` parameter to support .NET 10 Previews and revamped the WinUI Blazor project template.
 
