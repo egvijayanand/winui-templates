@@ -1,13 +1,12 @@
 ﻿namespace WinUIApp._1.ViewModels
 {
-    public partial class BaseViewModel : ObservableObject
+    public partial class BaseViewModel(string title = "") : ObservableObject
     {
-        public BaseViewModel()
-        {
-
-        }
-
         [ObservableProperty]
-        private string _title = string.Empty;
+#if Net10OrLater
+        public partial string Title { get; set; } = title;
+#else
+        private string _title = title;
+#endif
     }
 }

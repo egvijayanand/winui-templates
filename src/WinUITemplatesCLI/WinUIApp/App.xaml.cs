@@ -1,3 +1,4 @@
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml.Navigation;
 
 namespace WinUIApp._1
@@ -26,6 +27,13 @@ namespace WinUIApp._1
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             window ??= new Window();
+            window.ExtendsContentIntoTitleBar = false;
+
+            if (window.AppWindow.Presenter is OverlappedPresenter presenter)
+            {
+                //presenter.SetBorderAndTitleBar(false, false);
+                presenter.Maximize();
+            }
 
             if (window.Content is not Frame rootFrame)
             {

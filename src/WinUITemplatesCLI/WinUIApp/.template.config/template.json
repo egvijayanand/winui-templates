@@ -107,9 +107,21 @@
             "valueSource": "name",
             "valueTransform": "xmlEncode"
         },
-        "Preview": {
+        "Net10": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net10.0\")"
+        },
+        "Net11": {
             "type": "computed",
             "value": "(frameworkLower == \"net11.0\")"
+        },
+        "Preview": {
+            "type": "computed",
+            "value": "(Net11)"
+        },
+        "Net10OrLater": {
+            "type": "computed",
+            "value": "(Net10 || Net11)"
         },
         "AddMvvmToolkit": {
             "type": "computed",
