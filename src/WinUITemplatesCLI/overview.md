@@ -16,24 +16,25 @@ And the supported values are:
 * net8.0
 * net9.0
 * net10.0 *(the default value)*
+* net11.0
 
-Note: The default value for the `framework` parameter remains as `net10.0` (the latest stable release), which means to create a project for `.NET 8` or `.NET 9`, an explicit value of `net8.0` / `net9.0` is to be passed.
+Note: The default value for the `framework` parameter remains as `net10.0` (the latest stable release), which means to create a project for `.NET 8`, `.NET 9`, or `.NET 11` (Preview), an explicit value of `net8.0` / `net9.0` / `net11.0` is to be passed.
+
+### What's New
 
 Starting with [v3.1.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.1.0), all three project templates take the below optional parameter support NuGet's Central Package Management (CPM) feature.
 
 * `-cpm` | `--central-pkg-mgmt` - Default value is `false`
 
-Starting with [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.3.0), added the ability to use the NuGet Central Package Management (CPM) feature within Visual Studio IDE.
+And from [v3.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.3.0), added the ability to use the NuGet Central Package Management (CPM) feature within Visual Studio IDE.
 
-Starting with [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
+And from [v3.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/3.4.0), introduced an option to support the XML-based solution file (slnx) format.
 
 * `-slnx` | `--use-slnx` - Default value is `true` (from `v5.0` onwards)
 
-Starting with [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.0.0), added another option (`net10.0`) to the `framework` parameter to support .NET 10 Previews and revamped the WinUI Blazor project template.
+And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.0.0), added another option (`net10.0`) to the `framework` parameter to support .NET 10 Previews and revamped the WinUI Blazor project template.
 
-Starting with [v4.2.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.2.0), introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
-
-Starting with [v4.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.3.0), introduced an option to use Nightly builds with WinUI Blazor projects for .NET MAUI components, featuring automatic configuration of package feeds.
+And from [v4.2.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.2.0), introduced an option to abstract the Shared components as a separate .NET MAUI and/or Razor Class Library.
 
 .NET MAUI XAML can be included within this .NET MAUI-specific class library.
 
@@ -57,9 +58,18 @@ dotnet new winui-blazor -o SharedApp -rcl
 dotnet new winui-blazor -o HybridApp -mcl -rcl
 ```
 
+And from [v4.3.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.3.0), introduced an option to use Nightly builds with WinUI Blazor projects for .NET MAUI components, featuring automatic configuration of package feeds.
+
 ```shell
 dotnet new winui-blazor -o NightlyApp -ni
 ```
+
+And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/4.4.0), in a WinUI Blazor project targeting .NET 10, the XAML files in the MAUI Class Library (using the -mcl option) will make use of the Global namespace feature.
+
+And from [v5.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/5.0.0), `framework` parameter defaults to `net10.0` (.NET 10) and uses SLNX as the default solution file format.
+
+And from [v6.0.0](https://www.nuget.org/packages/VijayAnand.WinUITemplates/6.0.0), added another option (`net11.0`) to the `framework` parameter to support .NET 11 Previews.
+
 *Note: These options may also be combined.*
 
 All these item templates require one mandatory parameter:
@@ -96,73 +106,91 @@ Use the below .NET CLI command to create the projects out these template:
 **WinUI 3 App:**
 
 ```shell
-dotnet new winui -n MyApp
+dotnet new winui -o MyApp
+```
+
+.NET 11 (Preview):
+
+```shell
+dotnet new winui -o MyApp -f net11.0
 ```
 
 .NET 9:
 
 ```shell
-dotnet new winui -n MyApp -f net9.0
+dotnet new winui -o MyApp -f net9.0
 ```
 
 .NET 8:
 
 ```shell
-dotnet new winui -n MyApp -f net8.0
+dotnet new winui -o MyApp -f net8.0
 ```
 
 Option to use the CPM feature:
 
 ```shell
-dotnet new winui -n MyApp -cpm
+dotnet new winui -o MyApp -cpm
 ```
 
 **Blazor Hybrid App:**
 
 ```shell
-dotnet new winui-blazor -n HybridApp
+dotnet new winui-blazor -o HybridApp
+```
+
+.NET 11 (Preview):
+
+```shell
+dotnet new winui-blazor -o HybridApp -f net11.0
 ```
 
 .NET 9:
 
 ```shell
-dotnet new winui-blazor -n HybridApp -f net9.0
+dotnet new winui-blazor -o HybridApp -f net9.0
 ```
 
 .NET 8:
 
 ```shell
-dotnet new winui-blazor -n HybridApp -f net8.0
+dotnet new winui-blazor -o HybridApp -f net8.0
 ```
 
 Option to use the CPM feature:
 
 ```shell
-dotnet new winui-blazor -n HybridApp -cpm
+dotnet new winui-blazor -o HybridApp -cpm
 ```
 
 **Library:**
 
 ```shell
-dotnet new winuilib -n MyLib
+dotnet new winuilib -o MyLib
+```
+
+.NET 11 (Preview):
+
+```shell
+dotnet new winuilib -o MyLib -f net11.0
 ```
 
 .NET 9:
 
 ```shell
-dotnet new winuilib -n MyLib -f net9.0
+dotnet new winuilib -o MyLib -f net9.0
 ```
 
 .NET 8:
 
 ```shell
-dotnet new winuilib -n MyLib -f net8.0
+dotnet new winuilib -o MyLib -f net8.0
 ```
 
 Option to use the CPM feature:
 
 ```shell
-dotnet new winuilib -n MyLib -cpm
+dotnet new winuilib -o MyLib -cpm
 ```
 
 All three project templates take the below optional parameter to include the officially supported [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/) NuGet package.
@@ -170,15 +198,15 @@ All three project templates take the below optional parameter to include the off
 * `-imt` | `--include-mvvm-toolkit` - Default value is false
 
 ```shell
-dotnet new winui -n MyApp -imt
+dotnet new winui -o MyApp -imt
 ```
 
 ```shell
-dotnet new winui-blazor -n HybridApp -imt
+dotnet new winui-blazor -o HybridApp -imt
 ```
 
 ```shell
-dotnet new winuilib -n MyLib -imt
+dotnet new winuilib -o MyLib -imt
 ```
 
 Use the below .NET CLI command to create the items out these template:

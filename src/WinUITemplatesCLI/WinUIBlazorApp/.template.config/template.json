@@ -33,6 +33,11 @@
             "description": "Option to choose the App target framework.",
             "choices": [
                 {
+                    "choice": "net11.0",
+                    "description": "Target .NET 11",
+                    "displayName": ".NET 11 (Preview)"
+                },
+                {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
                     "displayName": ".NET 10 (LTS)"
@@ -76,15 +81,22 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Option to use .NET MAUI 10 Global Namespace feature.",
-            "displayName": "Option to use .NET MAUI 10 Global Namespace feature."
+            "description": "Option to use .NET MAUI 10+ Global Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10+ Global Namespace feature."
         },
         "implicit-namespace": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use .NET MAUI 10 Implicit Namespace feature.",
-            "displayName": "Option to use .NET MAUI 10 Implicit Namespace feature."
+            "description": "Option to use .NET MAUI 10+ Implicit Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10+ Implicit Namespace feature."
+        },
+        "source-gen": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Option to use .NET MAUI 10+ Source Generation feature.",
+            "displayName": "Option to use .NET MAUI 10+ Source Generation feature."
         },
         "application-id": {
             "type": "parameter",
@@ -181,17 +193,51 @@
             "type": "computed",
             "value": "(frameworkLower == \"net10.0\")"
         },
-        "Net8OrLater": {
+        "Net11": {
             "type": "computed",
-            "value": "(Net8 || Net9 || Net10)"
+            "value": "(frameworkLower == \"net11.0\")"
+        },
+        "Preview": {
+            "type": "computed",
+            "value": "(Net11)"
         },
         "Net9OrLater": {
             "type": "computed",
-            "value": "(Net9 || Net10)"
+            "value": "(Net9 || Net10 || Net11)"
         },
         "Net10OrLater": {
             "type": "computed",
-            "value": "(Net10)"
+            "value": "(Net10 || Net11)"
+        },
+        "Net11OrLater": {
+            "type": "computed",
+            "value": "(Net11)"
+        },
+        "PkgVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "PKG_VERSION",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "(Net8)",
+                        "value": "8.*"
+                    },
+                    {
+                        "condition": "(Net9)",
+                        "value": "9.*"
+                    },
+                    {
+                        "condition": "(Net10)",
+                        "value": "10.*"
+                    },
+                    {
+                        "condition": "(Net11)",
+                        "value": "11.*"
+                    }
+                ]
+            }
         },
         "GlobalNamespace": {
             "type": "computed",
@@ -200,6 +246,10 @@
         "ImplicitNamespace": {
             "type": "computed",
             "value": "(Net10OrLater && implicit-namespace)"
+        },
+        "SourceGen": {
+            "type": "computed",
+            "value": "(Net10OrLater && source-gen)"
         },
         "AddMvvmToolkit": {
             "type": "computed",

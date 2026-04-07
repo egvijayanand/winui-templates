@@ -2,11 +2,17 @@
     <PropertyGroup>
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net10)-->
+        <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.20-ci.net10.25563.5</MauiVersion>
+        <MauiVersion>11.0.0-preview.3.26203.7</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.10</MauiVersion>
+        <MauiVersion>11.0.0-preview.2.26152.10</MauiVersion>
+        <!--#endif-->
+        <!--#elif (Net10)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>10.0.60-ci.main.26203.10</MauiVersion>
+        <!--#else-->
+        <MauiVersion>10.0.51</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
@@ -15,46 +21,40 @@
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <!--#if (Net10)-->
-        <!--#if (Nightly)-->
-        <MauiVersion>10.*-*</MauiVersion>
+        <!--#if (Preview || Nightly)-->
+        <MauiVersion>PKG_VERSION-*</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.*</MauiVersion>
-        <!--#endif-->
-        <!--#elif (Net9)-->
-        <!--#if (Nightly)-->
-        <MauiVersion>9.*-*</MauiVersion>
-        <!--#else-->
-        <MauiVersion>9.*</MauiVersion>
-        <!--#endif-->
-        <!--#elif (Net8)-->
-        <!--#if (Nightly)-->
-        <MauiVersion>8.*-*</MauiVersion>
-        <!--#else-->
-        <MauiVersion>8.*</MauiVersion>
-        <!--#endif-->
+        <MauiVersion>PKG_VERSION</MauiVersion>
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
-        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.251107005" />
-        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3595.46" />
-        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
+        <!--#if (Net10OrLater)-->
+        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.260224002" />
+        <!--#endif-->
+        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
+        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1721" />
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.11" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.14" Condition="'$(Configuration)' == 'Debug'" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#elif (Net11)-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-preview.2.26159.112" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <!--#if (RazorLib)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.11" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.14" />
         <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.22" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.25" />
+        <!--#elif (Net11)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-preview.2.26159.112" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.5" />
         <!--#endif-->
         <!--#endif-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
@@ -66,7 +66,7 @@
         <PackageVersion Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
         <!--#endif-->
     </ItemGroup>
     <!--#endif-->

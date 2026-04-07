@@ -7,11 +7,14 @@
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
+        <!--#if (SourceGen)-->
+        <MauiXamlInflator>SourceGen</MauiXamlInflator>
+        <!--#endif-->
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
-        <!--#if (Net10OrLater && Mvvm)-->
+        <!--#if (Preview)-->
         <LangVersion>preview</LangVersion>
         <!--#else-->
         <LangVersion>latest</LangVersion>
@@ -36,12 +39,10 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" IncludeAssets="compile;runtime" />
-        <!--#if (Net9)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" Condition="'$(Configuration)' == 'Debug'" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#if (Preview || Nightly)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="PKG_VERSION-*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="PKG_VERSION" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
