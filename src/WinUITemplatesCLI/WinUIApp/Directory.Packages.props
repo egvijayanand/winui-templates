@@ -3,11 +3,11 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     </PropertyGroup>
     <ItemGroup>
-        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
-        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3595.46" />
-        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
+        <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+        <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
+        <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1721" />
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
         <!--#endif-->
     </ItemGroup>
 </Project>

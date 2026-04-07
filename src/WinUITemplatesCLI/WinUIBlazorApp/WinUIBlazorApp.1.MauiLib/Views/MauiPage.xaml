@@ -4,6 +4,7 @@
 <ContentPage
     x:Class="WinUIBlazorApp._1.Views.MauiPage"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
     Title="{Binding Title}"
     x:DataType="MauiViewModel"
     ControlTemplate="{StaticResource VersionTemplate}">
@@ -17,6 +18,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
     Title="{Binding Title}"
     x:DataType="MauiViewModel"
     ControlTemplate="{StaticResource VersionTemplate}"
@@ -47,6 +49,7 @@
 <ContentPage
     x:Class="WinUIBlazorApp._1.Views.MauiPage"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
     ControlTemplate="{StaticResource VersionTemplate}">
 <!--#elif (GlobalNamespace)-->
 <ContentPage
@@ -55,6 +58,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WinUIBlazorApp._1"
     ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
@@ -83,7 +87,7 @@
         <!--#endif-->
             <BlazorWebView.RootComponents>
                 <RootComponent
-                    ComponentType="{x:Type Main}"
+                    ComponentType="{x:Type local:Main}"
                     Selector="#app" />
             </BlazorWebView.RootComponents>
         </BlazorWebView>

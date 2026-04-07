@@ -30,6 +30,11 @@
             "description": "Option to choose the App target framework.",
             "choices": [
                 {
+                    "choice": "net11.0",
+                    "description": "Target .NET 11",
+                    "displayName": ".NET 11 (Preview)"
+                },
+                {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
                     "displayName": ".NET 10 (LTS)"
@@ -102,9 +107,9 @@
             "valueSource": "name",
             "valueTransform": "xmlEncode"
         },
-        "Net8OrLater": {
+        "Preview": {
             "type": "computed",
-            "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\" || frameworkLower == \"net10.0\")"
+            "value": "(frameworkLower == \"net11.0\")"
         },
         "AddMvvmToolkit": {
             "type": "computed",
